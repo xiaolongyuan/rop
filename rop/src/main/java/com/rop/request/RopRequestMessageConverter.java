@@ -4,15 +4,16 @@
  */
 package com.rop.request;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.AnnotationIntrospector;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
 import com.rop.MessageFormat;
 import com.rop.RopException;
 import com.rop.RopRequestParseException;
 import com.rop.impl.SimpleRopRequestContext;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.map.AnnotationIntrospector;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-import org.codehaus.jackson.xc.JaxbAnnotationIntrospector;
+
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.converter.ConditionalGenericConverter;
 import org.springframework.http.converter.HttpMessageConversionException;
@@ -42,14 +43,14 @@ public class RopRequestMessageConverter implements ConditionalGenericConverter {
     private static final ConcurrentMap<Class, JAXBContext> jaxbContexts = new ConcurrentHashMap<Class, JAXBContext>();
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
-
-    static {
-        AnnotationIntrospector introspector = new JaxbAnnotationIntrospector();
-        SerializationConfig serializationConfig = objectMapper.getSerializationConfig();
-        serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
-                                                 .withAnnotationIntrospector(introspector);
-        objectMapper.setSerializationConfig(serializationConfig);
-    }
+//
+//    static {
+//        AnnotationIntrospector introspector = new JaxbAnnotationIntrospector();
+//        SerializationConfig serializationConfig = objectMapper.getSerializationConfig();
+//        serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
+//                                                 .withAnnotationIntrospector(introspector);
+//        objectMapper.setSerializationConfig(serializationConfig);
+//    }
 
 
     /**

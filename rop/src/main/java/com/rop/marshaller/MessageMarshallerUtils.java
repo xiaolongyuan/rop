@@ -3,6 +3,10 @@
  */
 package com.rop.marshaller;
 
+import com.fasterxml.jackson.core.JsonEncoding;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
@@ -10,10 +14,7 @@ import com.rop.MessageFormat;
 import com.rop.RopException;
 import com.rop.RopMarshaller;
 import com.rop.RopRequest;
-import org.codehaus.jackson.JsonEncoding;
-import org.codehaus.jackson.JsonGenerator;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,11 +40,11 @@ public class MessageMarshallerUtils {
 
     private static RopMarshaller xmlRopResponseMarshaller = new JaxbXmlRopMarshaller();
 
-    static {
-        SerializationConfig serializationConfig = jsonObjectMapper.getSerializationConfig();
-        serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
-                .with(SerializationConfig.Feature.INDENT_OUTPUT);
-    }
+//    static {
+//        SerializationConfig serializationConfig = jsonObjectMapper.getSerializationConfig();
+//        serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
+//                .with(SerializationConfig.Feature.INDENT_OUTPUT);
+//    }
 
     private static XmlMapper xmlObjectMapper = new XmlMapper();
 

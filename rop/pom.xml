@@ -38,6 +38,103 @@
         </developer>
     </developers>
 
+
+    <!-- 设定除中央仓库(repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查询 -->
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>Public Repositories</name>
+            <url>http://192.168.199.78:9999/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>http://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>oschina</id>
+            <name>oschina repository</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>oschina-thirdparty</id>
+            <name>oschina thirdparty repository</name>
+            <url>http://maven.oschina.net/content/repositories/thirdparty/</url>
+        </repository>
+        <repository>
+            <id>org.springframework.maven.milestone</id>
+            <name>Spring Framework Maven Milestone Repository</name>
+            <url>http://maven.springframework.org/milestone</url>
+        </repository>
+        <repository>
+            <id>spy</id>
+            <name>Spy Repository</name>
+            <url>http://files.couchbase.com/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jahia</id>
+            <name>jahia repository</name>
+            <url>http://maven.jahia.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Activiti</id>
+            <url>https://maven.alfresco.com/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>maven-restlet</id>
+            <name>Restlet repository</name>
+            <url>http://maven.restlet.com</url>
+        </repository>
+        <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>Public Repositories</name>
+            <url>http://192.168.199.78:9999/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://192.168.199.78:9999/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.199.78:9999/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
 
         <dependency>
@@ -95,33 +192,40 @@
             <version>${hibernate.version}</version>
         </dependency>
 
+        <!-- JSON begin -->
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
             <version>${jackson.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-xc</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate4</artifactId>
             <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
-            <version>${jackson.xml.version}</version>
+            <version>${jackson.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-smile</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
 
         <!--  JDK1.5依赖包-->
         <dependency>
@@ -188,11 +292,40 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- fastjson -->
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.2.4</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+
+        <!-- joda -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.joda</groupId>
+            <artifactId>joda-convert</artifactId>
+            <version>${joda-convert.version}</version>
+        </dependency>
+
+        <!-- joda for jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+
+
     </dependencies>
     <build>
         <plugins>
@@ -249,58 +382,54 @@
                 </configuration>
             </plugin>
 
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.7.2</version>
                 <configuration>
-                    <forkMode>once</forkMode>
-                    <argLine>-Dfile.encoding=${file.encoding}</argLine>
-                    <systemProperties>
-                        <property>
-                            <name>net.sourceforge.cobertura.datafile</name>
-                            <value>target/cobertura/cobertura.ser</value>
-                        </property>
-                    </systemProperties>
+                    <!--<forkMode>once</forkMode>-->
+                    <!--<argLine>-Dfile.encoding=${file.encoding}</argLine>-->
+                    <!--<systemProperties>-->
+                        <!--<property>-->
+                            <!--<name>net.sourceforge.cobertura.datafile</name>-->
+                            <!--<value>target/cobertura/cobertura.ser</value>-->
+                        <!--</property>-->
+                    <!--</systemProperties>-->
+
+                    <includes>
+                        <!--不写匹配默认规则,TestSuit结尾，test开头的方法  -->
+                        <include>**/*Test.java</include>   <!-- 两个星号**用来匹配任意路径，一个星号*用来获取除路径风格符外的0个或多个字符 -->
+                    </includes>
+                    <excludes>
+                        <!--<exclude>**/CollectionBillTestCase.java</exclude>-->
+                    </excludes>
+                    <skip>false</skip>  <!-- 略过单元测试 -->
+                    <testFailureIgnore>true</testFailureIgnore> <!-- 当Maven 遇到一个测试失败，它默认的行为是停止当前的构建。 如果你希望继续构建项目，即使 Surefire 插件遇到了失败的单元测试，你就需要设置 Surefire 的testFailureIgnore 这个配置属性为 true -->
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <id>localDM</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <distributionManagement>
-                <repository>
-                    <id>internal.repo.release</id>
-                    <url>http://10.188.182.140:8081/nexus/content/repositories/releases/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>internal.repo.snapshot</id>
-                    <url>http://10.188.182.140:8081/nexus/content/repositories/snapshots/</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-    </profiles>
-
     <properties>
         <file.encoding>UTF-8</file.encoding>
-        <java.version>1.5</java.version>
+        <java.version>1.6</java.version>
         <servlet.version>2.5</servlet.version>
-        <spring.version>3.2.3.RELEASE</spring.version>
+        <spring.version>4.1.4.RELEASE</spring.version>
 
-        <jackson.version>1.9.5</jackson.version>
-        <slf4j.version>1.6.1</slf4j.version>
+        <jackson.version>2.5.2</jackson.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <commons-lang3.version>3.1</commons-lang3.version>
         <log4j.version>1.2.16</log4j.version>
         <hibernate.version>4.2.0.Final</hibernate.version>
-        <codec.version>1.6</codec.version>
-        <jackson.xml.version>2.3.2-jdk1.5</jackson.xml.version>
-        <jaxb-api.version>2.2.6</jaxb-api.version>
+        <codec.version>1.10</codec.version>
+
+        <!-- fastjson  JSON序列化工具 -->
+        <fastjson.version>1.2.5</fastjson.version>
+
+        <jaxb-api.version>2.2.12</jaxb-api.version>
         <jaxb-impl.version>2.1</jaxb-impl.version>
-        <woodstox.version>4.1.5</woodstox.version>
+        <woodstox.version>4.4.1</woodstox.version>
         <activation.version>1.1.1</activation.version>
         <commonslang.version>2.4</commonslang.version>
         <testng.version>6.3</testng.version>
@@ -308,6 +437,13 @@
         <mockito.version>1.8.5</mockito.version>
         <surefire.version>2.8</surefire.version>
         <cobertura.version>2.5.1</cobertura.version>
+
+        <!-- joda  时间处理类库-->
+        <joda-time.version>2.7</joda-time.version>
+        <joda-convert.version>1.7</joda-convert.version>
+
+        <!--prettytime 时间格式化类库-->
+        <prettytime.version>4.0.0.Final</prettytime.version>
     </properties>
 
 </project>

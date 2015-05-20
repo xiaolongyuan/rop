@@ -4,15 +4,22 @@
  */
 package com.rop.marshaller;
 
+import com.fasterxml.jackson.core.JsonEncoding;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.AnnotationIntrospector;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
 import com.rop.RopException;
 import com.rop.RopMarshaller;
-import org.codehaus.jackson.JsonEncoding;
-import org.codehaus.jackson.JsonGenerator;
-import org.codehaus.jackson.map.AnnotationIntrospector;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
-import org.codehaus.jackson.xc.JaxbAnnotationIntrospector;
+//import org.codehaus.jackson.JsonEncoding;
+//import org.codehaus.jackson.JsonGenerator;
+//import org.codehaus.jackson.map.AnnotationIntrospector;
+//import org.codehaus.jackson.map.ObjectMapper;
+//import org.codehaus.jackson.map.SerializationConfig;
+//import org.codehaus.jackson.map.annotate.JsonSerialize;
+//import org.codehaus.jackson.xc.JaxbAnnotationIntrospector;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -43,12 +50,12 @@ public class JacksonJsonRopMarshaller implements RopMarshaller {
             ObjectMapper objectMapper = new ObjectMapper();
             AnnotationIntrospector introspector = new JaxbAnnotationIntrospector();
             SerializationConfig serializationConfig = objectMapper.getSerializationConfig();
-            serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
-                    .with(SerializationConfig.Feature.INDENT_OUTPUT)
-                    .withSerializationInclusion(JsonSerialize.Inclusion.NON_NULL)
-                    .withSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY)
-                    .withAnnotationIntrospector(introspector);
-            objectMapper.setSerializationConfig(serializationConfig);
+//            serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
+//                    .with(SerializationConfig.Feature.INDENT_OUTPUT)
+//                    .withSerializationInclusion(JsonSerialize.Inclusion.NON_NULL)
+//                    .withSerializationInclusion(JsonSerialize.Inclusion.NON_EMPTY)
+//                    .withAnnotationIntrospector(introspector);
+//            objectMapper.setSerializationConfig(serializationConfig);
             this.objectMapper = objectMapper;
         }
         return this.objectMapper;
