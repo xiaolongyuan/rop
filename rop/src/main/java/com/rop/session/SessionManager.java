@@ -16,6 +16,13 @@ public interface SessionManager {
     void addSession(String sessionId, Session session);
 
     /**
+     * 会话内容变化，修改内容
+     * @param sessionId
+     * @param session
+     */
+    void modifySession(String sessionId, Session session);
+
+    /**
      * 从注册表中获取会话
      *
      * @param sessionId

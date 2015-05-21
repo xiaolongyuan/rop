@@ -36,7 +36,7 @@ public class SessionBindInterceptor extends AbstractInterceptor {
         if (session != null && session.isChanged()) {
             session.removeAttribute(CommonConstant.SESSION_CHANGED);
             SessionManager sessionManager = ropRequestContext.getRopContext().getSessionManager();
-            sessionManager.addSession(ropRequestContext.getSessionId(), session);
+            sessionManager.modifySession(ropRequestContext.getSessionId(), session);
             if (logger.isDebugEnabled()) {
                 logger.debug("会话内容发生更改，将其同步到外部缓存管理器中。");
             }
