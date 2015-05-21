@@ -53,12 +53,13 @@ public class DefaultRopClient implements RopClient {
     private String appSecret;
 
     //时间戳参数
-    private Long timestamp;
+//    private Long timestamp;
 
+    //会话ID
     private String sessionId;
 
-    //报文格式
-    private MessageFormat messageFormat = MessageFormat.xml;
+    //默认报文格式
+    private MessageFormat messageFormat = MessageFormat.json;
 
     private Locale locale = Locale.SIMPLIFIED_CHINESE;
 
@@ -78,6 +79,7 @@ public class DefaultRopClient implements RopClient {
     //键为转换的目标类型
     private static Map<Class<?>, RopConverter<String, ?>> ropConverterMap =
             new HashMap<Class<?>, RopConverter<String, ?>>();
+
     {
         ropConverterMap.put(UploadFile.class, new UploadFileConverter());
     }
@@ -87,7 +89,6 @@ public class DefaultRopClient implements RopClient {
         this.appKey = appKey;
         this.appSecret = appSecret;
 
-
     }
 
     public DefaultRopClient(String serverUrl, String appKey, String appSecret, MessageFormat messageFormat) {
@@ -95,7 +96,6 @@ public class DefaultRopClient implements RopClient {
         this.appKey = appKey;
         this.appSecret = appSecret;
         this.messageFormat = messageFormat;
-
     }
 
     public DefaultRopClient(String serverUrl, String appKey, String appSecret, MessageFormat messageFormat, Locale locale) {
@@ -203,9 +203,7 @@ public class DefaultRopClient implements RopClient {
             if (sessionId != null) {
                 paramMap.put(SystemParameterNames.getSessionId(), sessionId);
             }
-            if (timestamp == null) {
-                timestamp = System.currentTimeMillis();
-            }
+            paramMap.put(SystemParameterNames.getTimestamp(), System.currentTimeMillis()+"");
         }
 
 
@@ -283,6 +281,9 @@ public class DefaultRopClient implements RopClient {
         private Map<String, String> addOtherParamMap(String methodName, String version) {
             paramMap.put(SystemParameterNames.getMethod(), methodName);
             paramMap.put(SystemParameterNames.getVersion(), version);
+
+            paramMap.put(SystemParameterNames.getTimestamp(), ""+System.currentTimeMillis());
+
             String signValue = RopUtils.sign(paramMap, ignoreSignParams, appSecret);
             paramMap.put(SystemParameterNames.getSign(), signValue);
             return paramMap;
@@ -344,6 +345,7 @@ public class DefaultRopClient implements RopClient {
             form.put(SystemParameterNames.getVersion(), version);
             form.put(SystemParameterNames.getFormat(), messageFormat.name());
             form.put(SystemParameterNames.getLocale(), locale.toString());
+            form.put(SystemParameterNames.getTimestamp(), ""+System.currentTimeMillis());
             if (sessionId != null) {
                 form.put(SystemParameterNames.getSessionId(), sessionId);
             }

@@ -594,6 +594,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         try {
             if (interceptors != null && interceptors.size() > 0) {
                 for (Interceptor interceptor : interceptors) {
+                    tempInterceptor = interceptor;
                     interceptor.beforeResponse(ropRequestContext);
                 }
             }
