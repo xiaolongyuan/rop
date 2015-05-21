@@ -203,9 +203,9 @@ public class DefaultRopClient implements RopClient {
             if (sessionId != null) {
                 paramMap.put(SystemParameterNames.getSessionId(), sessionId);
             }
-//            if (timestamp == null) {
-//                timestamp = System.currentTimeMillis();
-//            }
+            if (timestamp == null) {
+                timestamp = System.currentTimeMillis();
+            }
         }
 
 
