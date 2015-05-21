@@ -21,7 +21,7 @@ import com.rop.sample.response.LogonResponse;
  */
 public class RopSampleClient {
 
-    public static final String SERVER_URL = "http://localhost:8088/router";
+    public static final String SERVER_URL = "http://localhost:8080/router";
 
     private DefaultRopClient ropClient ;
 

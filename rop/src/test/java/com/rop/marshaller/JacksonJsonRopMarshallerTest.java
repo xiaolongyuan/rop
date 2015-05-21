@@ -26,6 +26,7 @@ public class JacksonJsonRopMarshallerTest {
         foo.setB2(true);
         foo.setI1(1);
         foo.setI2(1);
+        foo.setOk("好的，中文，en");
         Bar bar = new Bar();
         bar.setFoo(foo);
         marshaller.marshaller(bar,System.out);

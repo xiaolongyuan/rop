@@ -3,6 +3,8 @@
  */
 package com.rop.marshaller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,7 +44,7 @@ public class MessageMarshallerUtils {
 
 //    static {
 //        SerializationConfig serializationConfig = jsonObjectMapper.getSerializationConfig();
-//        serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
+//        serializationConfig = serializationConfig.without(Feature.WRAP_ROOT_VALUE)
 //                .with(SerializationConfig.Feature.INDENT_OUTPUT);
 //    }
 
@@ -118,8 +120,17 @@ public class MessageMarshallerUtils {
         ByteArrayOutputStream bos = new ByteArrayOutputStream(1024);
         try {
             if (format == MessageFormat.json) {
-                JsonGenerator jsonGenerator = jsonObjectMapper.getJsonFactory().createJsonGenerator(bos, JsonEncoding.UTF8);
-                jsonObjectMapper.writeValue(jsonGenerator, object);
+//                JsonGenerator jsonGenerator = jsonObjectMapper.getJsonFactory()
+//                        .createJsonGenerator(bos, JsonEncoding.UTF8);
+//                jsonObjectMapper.writeValue(jsonGenerator, object);
+
+                bos.write(JSON.toJSONBytes(object, new SerializerFeature[]{
+                        SerializerFeature.WriteNullStringAsEmpty,
+                        SerializerFeature.WriteNullBooleanAsFalse,
+                        SerializerFeature.WriteNullListAsEmpty,
+                        SerializerFeature.WriteNullNumberAsZero
+                }));
+
             } else {
                 xmlRopResponseMarshaller.marshaller(object, bos);
             }

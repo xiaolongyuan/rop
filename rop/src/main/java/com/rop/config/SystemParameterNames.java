@@ -37,11 +37,15 @@ public class SystemParameterNames {
     //签名的默认参数名
     private static final String SIGN = "sign";
 
+    // 时间戳，格式为yyyy-mm-dd HH:mm:ss，例如：2013-05-06 13:52:03。API服务端允许客户端请求时间误差为6分钟。
+    private static final String TIMESTAMP = "t";
+
     private static String method = METHOD;
 
     private static String format = FORMAT;
 
     private static String locale = LOCALE;
+
     private static String sessionId = SESSION_ID;
 
     private static String appKey = APP_KEY;
@@ -49,6 +53,8 @@ public class SystemParameterNames {
     private static String version = VERSION;
 
     private static String sign = SIGN;
+
+    private static String timestamp = TIMESTAMP;
 
     private static String jsonp = JSONP;
 
@@ -114,6 +120,14 @@ public class SystemParameterNames {
 
     public static void setJsonp(String jsonp) {
         SystemParameterNames.jsonp = jsonp;
+    }
+
+    public static String getTimestamp() {
+        return timestamp;
+    }
+
+    public static void setTimestamp(String timestamp) {
+        SystemParameterNames.timestamp = timestamp;
     }
 }
 
