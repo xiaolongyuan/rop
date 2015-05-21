@@ -11,6 +11,7 @@ package com.rop.config;
  *
  * @author 陈雄华
  * @version 1.0
+ * @since 1.0.1 筱龙缘 增加系统级参数
  */
 public class SystemParameterNames {
 
@@ -37,7 +38,7 @@ public class SystemParameterNames {
     //签名的默认参数名
     private static final String SIGN = "sign";
 
-    // 时间戳，格式为yyyy-mm-dd HH:mm:ss，例如：2013-05-06 13:52:03。API服务端允许客户端请求时间误差为6分钟。
+    // 时间戳，格式为yyyy-mm-dd HH:mm:ss，例如：2013-05-06 13:52:03。API服务端允许客户端请求时间误差为10分钟。
     private static final String TIMESTAMP = "t";
 
     private static String method = METHOD;
