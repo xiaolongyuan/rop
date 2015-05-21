@@ -69,6 +69,20 @@ public class DefaultRopContext implements RopContext {
         return serviceHandlerMap.containsKey(ServiceMethodHandler.methodWithVersion(methodName, version));
     }
 
+    public  boolean isValidTimestamp(String methodName, Long timestamp){
+
+        Date date  = new Date(timestamp);
+
+        if(!date.before(new Date(timestamp + (10 * 60 * 1000)))){
+            return false;
+        }
+        if (!date.after(new Date(timestamp - (10 * 60 * 1000)))){
+            return false;
+        }
+
+        return true;
+    }
+
 
     public boolean isVersionObsoleted(String methodName, String version) {
         return false;  //To change body of implemented methods use File | Settings | File Templates.

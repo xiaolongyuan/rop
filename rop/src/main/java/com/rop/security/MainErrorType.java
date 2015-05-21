@@ -13,6 +13,7 @@ import java.util.EnumMap;
  *
  * @author 陈雄华
  * @version 1.0
+ * @since  1.1 添加 时间戳参数错误类型 筱龙缘
  */
 public enum MainErrorType {
     SERVICE_CURRENTLY_UNAVAILABLE,
@@ -41,7 +42,9 @@ public enum MainErrorType {
     EXCEED_USER_INVOKE_LIMITED,
     EXCEED_SESSION_INVOKE_LIMITED,
     EXCEED_APP_INVOKE_LIMITED,
-    EXCEED_APP_INVOKE_FREQUENCY_LIMITED;
+    EXCEED_APP_INVOKE_FREQUENCY_LIMITED,
+    MISSING_TIMESTAMP,
+    INVALID_TIMESTAMP;
 
     private static EnumMap<MainErrorType, String> errorCodeMap = new EnumMap<MainErrorType, String>(MainErrorType.class);
 
@@ -73,6 +76,8 @@ public enum MainErrorType {
         errorCodeMap.put(MainErrorType.EXCEED_SESSION_INVOKE_LIMITED, "35");
         errorCodeMap.put(MainErrorType.EXCEED_APP_INVOKE_LIMITED, "36");
         errorCodeMap.put(MainErrorType.EXCEED_APP_INVOKE_FREQUENCY_LIMITED, "37");
+        errorCodeMap.put(MainErrorType.MISSING_TIMESTAMP, "38");
+        errorCodeMap.put(MainErrorType.INVALID_TIMESTAMP, "39");
     }
 
     public String value() {

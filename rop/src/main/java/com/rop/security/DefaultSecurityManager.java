@@ -104,25 +104,39 @@ public class DefaultSecurityManager implements SecurityManager {
             }
         }
 
-        //5.检查签名正确性
+        //5.检查t参数
+        if (context.getTimestamp() == null) {
+            return MainErrors.getError(MainErrorType.MISSING_TIMESTAMP, context.getLocale(),
+                                       context.getMethod(),
+                                       SystemParameterNames.getTimestamp());
+        } else {
+            if (!ropContext.isValidTimestamp(context.getMethod(), context.getTimestamp())) {
+                return MainErrors.getError(
+                        MainErrorType.INVALID_TIMESTAMP, context.getLocale(),
+                        context.getMethod(), context.getTimestamp());
+            }
+        }
+
+        //6.检查签名正确性
         mainError = checkSign(context);
+
         if (mainError != null) {
             return mainError;
         }
 
-        //6.检查服务方法的版本是否已经过期
+        //7.检查服务方法的版本是否已经过期
         if (context.getServiceMethodDefinition().isObsoleted()) {
             return MainErrors.getError(MainErrorType.METHOD_OBSOLETED, context.getLocale(),
                     context.getMethod(), context.getVersion());
         }
 
-        //7.检查请求HTTP方法的匹配性
+        //8.检查请求HTTP方法的匹配性
         mainError = validateHttpAction(context);
         if (mainError != null) {
             return mainError;
         }
 
-        //8.检查 format
+        //9.检查 format
         if (!MessageFormat.isValidFormat(context.getFormat())) {
             return MainErrors.getError(MainErrorType.INVALID_FORMAT, context.getLocale(),
                                         context.getMethod(),context.getVersion(),context.getFormat());

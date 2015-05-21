@@ -52,6 +52,15 @@ public interface RopContext {
      */
     boolean isValidVersion(String methodName, String version);
 
+    /**
+     * 对应服务方法时间戳是否超出时效范围限制（正负10分钟），是否重复（防止重放攻击）。
+     *
+     * @param methodName
+     * @param timestamp
+     * @return
+     */
+    boolean isValidTimestamp(String methodName, Long timestamp);
+
 
     /**
      * 服务方法的版本是否已经弃用
