@@ -85,6 +85,7 @@ public class ServletRequestContextBuilder implements RequestContextBuilder {
         requestContext.setFormat(getFormat(servletRequest));
         requestContext.setMessageFormat(getResponseFormat(servletRequest));
         requestContext.setSign(servletRequest.getParameter(SystemParameterNames.getSign()));
+        requestContext.setTimestamp(Long.parseLong(servletRequest.getParameter(SystemParameterNames.getTimestamp())));
         requestContext.setHttpAction(HttpAction.fromValue(servletRequest.getMethod()));
 
         //设置服务处理器

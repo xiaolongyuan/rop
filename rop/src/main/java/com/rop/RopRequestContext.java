@@ -67,7 +67,7 @@ public interface RopRequestContext {
      *
      * @param session
      */
-    void addSession(String sessionId, Session session);
+    String addSession(Session session);
 
     /**
      * 删除会话，删除{@link #getSessionId()}对应的Session
@@ -101,6 +101,13 @@ public interface RopRequestContext {
      * @return
      */
     String getSign();
+
+    /**
+     * 获取时间戳
+     *
+     * @return
+     */
+    Long getTimestamp();
 
     /**
      * 获取客户端的IP

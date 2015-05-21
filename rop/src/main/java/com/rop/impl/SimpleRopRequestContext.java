@@ -40,6 +40,8 @@ public class SimpleRopRequestContext implements RopRequestContext {
 
     private String sign;
 
+    private Long timstamp;
+
     private Map<String, Object> attributes = new HashMap<String, Object>();
 
     private ServiceMethodHandler serviceMethodHandler;
@@ -159,12 +161,14 @@ public class SimpleRopRequestContext implements RopRequestContext {
     }
 
 
-    public void addSession(String sessionId, Session session) {
-        this.sessionId = sessionId;
+    public String addSession(Session session) {
+
         this.session = session;
         if (ropContext != null && ropContext.getSessionManager() != null) {
-            ropContext.getSessionManager().addSession(sessionId, session);
+            this.sessionId = ropContext.getSessionManager().addSession(session);
         }
+
+        return this.sessionId;
     }
 
 
@@ -239,6 +243,16 @@ public class SimpleRopRequestContext implements RopRequestContext {
     public void setSign(String sign) {
         this.sign = sign;
     }
+
+    @Override
+    public Long getTimestamp() {
+        return timstamp;
+    }
+
+    public void setTimestamp(Long timstamp) {
+        this. timstamp =timstamp;
+    }
+
 
     public void setMainError(MainError mainError) {
         this.mainError = mainError;
