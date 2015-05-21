@@ -85,6 +85,14 @@ public interface RopClient {
     RopClient setSignParamName(String paramName);
 
     /**
+     * 设置timestamp的参数名
+     *
+     * @param paramName
+     * @return
+     */
+    RopClient setTimestampParamName(String paramName);
+
+    /**
      * 设置sessionId
      *
      * @param sessionId

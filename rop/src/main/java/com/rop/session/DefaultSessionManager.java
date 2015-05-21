@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -17,8 +18,10 @@ public final class DefaultSessionManager implements SessionManager {
     private final Map<String, Session> sessionCache = new ConcurrentHashMap<String, Session>(128, 0.75f, 32);
 
 
-    public void addSession(String sessionId, Session session) {
+    public String addSession(Session session) {
+        String sessionId =UUID.randomUUID().toString();
         sessionCache.put(sessionId, session);
+        return sessionId;
     }
 
 

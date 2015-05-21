@@ -52,6 +52,9 @@ public class DefaultRopClient implements RopClient {
     //应用密钥
     private String appSecret;
 
+    //时间戳参数
+    private Long timestamp;
+
     private String sessionId;
 
     //报文格式
@@ -83,6 +86,8 @@ public class DefaultRopClient implements RopClient {
         this.serverUrl = serverUrl;
         this.appKey = appKey;
         this.appSecret = appSecret;
+
+
     }
 
     public DefaultRopClient(String serverUrl, String appKey, String appSecret, MessageFormat messageFormat) {
@@ -90,6 +95,7 @@ public class DefaultRopClient implements RopClient {
         this.appKey = appKey;
         this.appSecret = appSecret;
         this.messageFormat = messageFormat;
+
     }
 
     public DefaultRopClient(String serverUrl, String appKey, String appSecret, MessageFormat messageFormat, Locale locale) {
@@ -98,6 +104,7 @@ public class DefaultRopClient implements RopClient {
         this.appSecret = appSecret;
         this.messageFormat = messageFormat;
         this.locale = locale;
+
     }
 
 
@@ -122,48 +129,54 @@ public class DefaultRopClient implements RopClient {
         this.sessionId = sessionId;
     }
 
-
+    @Override
     public RopClient setAppKeyParamName(String paramName) {
         SystemParameterNames.setAppKey(paramName);
         return this;
     }
 
-
+    @Override
     public RopClient setSessionIdParamName(String paramName) {
         SystemParameterNames.setSessionId(paramName);
         return this;
     }
 
-
+    @Override
     public RopClient setMethodParamName(String paramName) {
         SystemParameterNames.setMethod(paramName);
         return this;
     }
 
-
+    @Override
     public RopClient setVersionParamName(String paramName) {
         SystemParameterNames.setVersion(paramName);
         return this;
     }
 
-
+    @Override
     public RopClient setFormatParamName(String paramName) {
         SystemParameterNames.setFormat(paramName);
         return this;
     }
 
-
+    @Override
     public RopClient setLocaleParamName(String paramName) {
         SystemParameterNames.setLocale(paramName);
         return this;
     }
 
-
+    @Override
     public RopClient setSignParamName(String paramName) {
         SystemParameterNames.setSign(paramName);
         return this;
     }
 
+
+    @Override
+    public RopClient setTimestampParamName(String paramName) {
+        SystemParameterNames.setTimestamp(paramName);
+        return null;
+    }
 
     public void addRopConvertor(RopConverter ropConverter) {
         this.ropConverterMap.put(ropConverter.getTargetClass(), ropConverter);
@@ -190,6 +203,9 @@ public class DefaultRopClient implements RopClient {
             if (sessionId != null) {
                 paramMap.put(SystemParameterNames.getSessionId(), sessionId);
             }
+//            if (timestamp == null) {
+//                timestamp = System.currentTimeMillis();
+//            }
         }
 
 
