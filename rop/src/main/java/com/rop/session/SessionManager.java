@@ -9,12 +9,11 @@ package com.rop.session;
 public interface SessionManager {
 
     /**
-     *
      * 注册一个会话
+     *
      * @param session
-     * @return sessionId
      */
-    String addSession(Session session);
+    void addSession(String sessionId, Session session);
 
     /**
      * 从注册表中获取会话

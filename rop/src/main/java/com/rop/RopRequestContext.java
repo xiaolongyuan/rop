@@ -67,7 +67,7 @@ public interface RopRequestContext {
      *
      * @param session
      */
-    String addSession(Session session);
+    void addSession(String sessionId,Session session);
 
     /**
      * 删除会话，删除{@link #getSessionId()}对应的Session

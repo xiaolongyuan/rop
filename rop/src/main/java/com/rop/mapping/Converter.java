@@ -1,7 +1,8 @@
 package com.rop.mapping;
 
-import com.qumei.api.ApiException;
-import com.qumei.api.ApiResponse;
+
+import com.rop.ApiException;
+import com.rop.ApiResponse;
 
 /**
  * 动态格式转换器。

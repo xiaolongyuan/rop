@@ -622,7 +622,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
             }
             httpServletResponse.addHeader(ACCESS_CONTROL_ALLOW_ORIGIN, "*");
             httpServletResponse.addHeader(ACCESS_CONTROL_ALLOW_METHODS, "*");
-            httpServletResponse.setCharacterEncoding(Constants.UTF8);
+            httpServletResponse.setCharacterEncoding(Constants.CHARSET_UTF8);
             httpServletResponse.setContentType(contentType);
 
             if (jsonpCallback != null) {

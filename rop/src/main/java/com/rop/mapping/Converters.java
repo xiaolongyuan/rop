@@ -1,9 +1,10 @@
 package com.rop.mapping;
 
-import com.qumei.api.ApiException;
-import com.qumei.api.ApiResponse;
-import com.qumei.api.Constants;
-import com.qumei.api.internal.util.StringUtils;
+
+
+import com.rop.ApiException;
+import com.rop.ApiResponse;
+import com.rop.Constants;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;

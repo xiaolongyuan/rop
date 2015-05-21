@@ -72,7 +72,7 @@ public class RopUtils {
 
     public static String utf8Encoding(String value, String sourceCharsetName) {
         try {
-            return new String(value.getBytes(sourceCharsetName), Constants.UTF8);
+            return new String(value.getBytes(sourceCharsetName), Constants.CHARSET_UTF8);
         } catch (UnsupportedEncodingException e) {
             throw new IllegalArgumentException(e);
         }
@@ -82,7 +82,7 @@ public class RopUtils {
         byte[] bytes = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-1");
-            bytes = md.digest(data.getBytes(Constants.UTF8));
+            bytes = md.digest(data.getBytes(Constants.CHARSET_UTF8));
         } catch (GeneralSecurityException gse) {
             throw new IOException(gse.getMessage());
         }
@@ -93,7 +93,7 @@ public class RopUtils {
         byte[] bytes = null;
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            bytes = md.digest(data.getBytes(Constants.UTF8));
+            bytes = md.digest(data.getBytes(Constants.CHARSET_UTF8));
         } catch (GeneralSecurityException gse) {
             throw new IOException(gse.getMessage());
         }
