@@ -8,11 +8,12 @@ import com.rop.session.Session;
 
 /**
  * <pre>
- *    安全控制控制器，决定用户是否有。
+ *    安全控制控制器，决定用户、ISV是否有权限访问服务方法。
  * </pre>
  *
  * @author 陈雄华
  * @version 1.0
+ * @since  1.1 补充文档 筱龙缘 2015.05.22
  */
 public interface ServiceAccessController {
 
