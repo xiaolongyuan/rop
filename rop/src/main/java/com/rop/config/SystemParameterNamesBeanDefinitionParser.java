@@ -17,6 +17,7 @@ import org.w3c.dom.Element;
  *
  * @author 陈雄华
  * @version 1.0
+ * @since  1.1 添加timestamp xml注入 筱龙缘 2015.05.22
  */
 public class SystemParameterNamesBeanDefinitionParser implements BeanDefinitionParser {
 
@@ -29,6 +30,7 @@ public class SystemParameterNamesBeanDefinitionParser implements BeanDefinitionP
         String locale = element.getAttribute("locale-param-name");
         String sign = element.getAttribute("sign-param-name");
         String jsonp = element.getAttribute("jsonp-param-name");
+        String timestamp = element.getAttribute("timestamp-param-name");
 
         if (StringUtils.hasText(appKey)) {
             SystemParameterNames.setAppKey(appKey);
@@ -53,6 +55,9 @@ public class SystemParameterNamesBeanDefinitionParser implements BeanDefinitionP
         }
         if (StringUtils.hasText(jsonp)) {
             SystemParameterNames.setJsonp(jsonp);
+        }
+        if (StringUtils.hasText(timestamp)) {
+            SystemParameterNames.setTimestamp(timestamp);
         }
         return null;
     }

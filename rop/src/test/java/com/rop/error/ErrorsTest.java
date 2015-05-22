@@ -17,7 +17,7 @@ public class ErrorsTest {
     @Test
     public void test(){
 
-        MainErrors.getError(MainErrorType.BUSINESS_LOGIC_ERROR, Locale.SIMPLIFIED_CHINESE,"");
+//        MainErrors.getError(MainErrorType.BUSINESS_LOGIC_ERROR, Locale.SIMPLIFIED_CHINESE,"");
 
     }
 
