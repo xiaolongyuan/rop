@@ -17,7 +17,7 @@ public interface RopUnmarshaller {
     /**
      * 将字符串反序列化为相应的对象
      *
-     * @param inputStream
+     * @param content
      * @param objectType
      * @param <T>
      * @return

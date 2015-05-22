@@ -23,7 +23,6 @@ public class SimpleRopEventMulticaster extends AbstractRopEventMulticaster {
 
     private Executor executor;
 
-
     public void multicastEvent(final RopEvent event) {
         try {
             for (final RopEventListener listener : getRopEventListeners(event)) {

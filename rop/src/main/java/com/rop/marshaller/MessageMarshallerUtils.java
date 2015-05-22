@@ -38,7 +38,7 @@ public class MessageMarshallerUtils {
 
     private static final String UTF_8 = "utf-8";
 
-    private static ObjectMapper jsonObjectMapper = new ObjectMapper();
+//    private static ObjectMapper jsonObjectMapper = new ObjectMapper();
 
     private static RopMarshaller xmlRopResponseMarshaller = new JaxbXmlRopMarshaller();
 
@@ -67,7 +67,14 @@ public class MessageMarshallerUtils {
             ByteArrayOutputStream bos = new ByteArrayOutputStream(1024);
             if (format == MessageFormat.json) {
                 if (request.getRopRequestContext() != null) {
-                    jsonObjectMapper.writeValue(bos, request.getRopRequestContext().getAllParams());
+                    bos.write(JSON.toJSONBytes(request.getRopRequestContext().getAllParams(),
+                            new SerializerFeature[]{
+                            SerializerFeature.WriteNullStringAsEmpty,
+                            SerializerFeature.WriteNullBooleanAsFalse,
+                            SerializerFeature.WriteNullListAsEmpty,
+                            SerializerFeature.WriteNullNumberAsZero
+                    }));
+//                    jsonObjectMapper.writeValue(bos, request.getRopRequestContext().getAllParams());
                 } else {
                     return "";
                 }
