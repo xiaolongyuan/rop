@@ -481,9 +481,9 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
 
                     //发布服务完成事件
                     ropRequestContext.setServiceEndTime(System.currentTimeMillis());
-
                     //完成一次服务请求，计算次数
-                    invokeTimesController.caculateInvokeTimes(ropRequestContext.getAppKey(), ropRequestContext.getSession());
+                    invokeTimesController.caculateInvokeTimes(ropRequestContext.getAppKey(), ropRequestContext
+                            .getSession(),ropRequestContext.getMethod());
                     fireAfterDoServiceEvent(ropRequestContext);
                 }
             }

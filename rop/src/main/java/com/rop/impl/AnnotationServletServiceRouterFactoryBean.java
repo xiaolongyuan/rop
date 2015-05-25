@@ -182,7 +182,7 @@ public class AnnotationServletServiceRouterFactoryBean
         //设置Spring上下文信息
         serviceRouter.setApplicationContext(this.applicationContext);
 
-        //启动之
+        //启动
         serviceRouter.startup();
     }
 

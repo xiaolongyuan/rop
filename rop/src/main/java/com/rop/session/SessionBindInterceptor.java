@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author : chenxh(quickselect@163.com)
  * @date: 13-10-16
+ * @since 1.1 修改会话内容修改接口 筱龙缘 2015.05.25
  */
 public class SessionBindInterceptor extends AbstractInterceptor {
 

@@ -21,7 +21,7 @@ public interface InvokeTimesController {
      * @param appKey
      * @param session
      */
-    void caculateInvokeTimes(String appKey, Session session);
+    void caculateInvokeTimes(String appKey, Session session,String method);
 
     /**
      * 用户服务访问次数是否超限

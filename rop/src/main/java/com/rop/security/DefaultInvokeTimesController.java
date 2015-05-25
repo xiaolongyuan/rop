@@ -17,7 +17,7 @@ import com.rop.session.Session;
 public class DefaultInvokeTimesController implements InvokeTimesController {
 
 
-    public void caculateInvokeTimes(String appKey, Session session) {
+    public void caculateInvokeTimes(String appKey, Session session,String method) {
     }
 
 
