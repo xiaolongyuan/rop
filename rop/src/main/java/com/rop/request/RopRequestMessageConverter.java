@@ -4,6 +4,7 @@
  */
 package com.rop.request;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.AnnotationIntrospector;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,16 +43,6 @@ public class RopRequestMessageConverter implements ConditionalGenericConverter {
 
     private static final ConcurrentMap<Class, JAXBContext> jaxbContexts = new ConcurrentHashMap<Class, JAXBContext>();
 
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-//
-//    static {
-//        AnnotationIntrospector introspector = new JaxbAnnotationIntrospector();
-//        SerializationConfig serializationConfig = objectMapper.getSerializationConfig();
-//        serializationConfig = serializationConfig.without(SerializationConfig.Feature.WRAP_ROOT_VALUE)
-//                                                 .withAnnotationIntrospector(introspector);
-//        objectMapper.setSerializationConfig(serializationConfig);
-//    }
-
 
     /**
      * 如果目标属性类有标注JAXB的注解，则使用该转换器
@@ -72,8 +63,10 @@ public class RopRequestMessageConverter implements ConditionalGenericConverter {
     public Object convert(Object source, TypeDescriptor sourceType, TypeDescriptor targetType) {
         try {
             if (SimpleRopRequestContext.messageFormat.get() == MessageFormat.json) {//输入格式为JSON
-                JsonParser jsonParser = objectMapper.getJsonFactory().createJsonParser((String) source);
-                return jsonParser.readValueAs(targetType.getObjectType());
+//                JsonParser jsonParser = objectMapper.getJsonFactory().createJsonParser((String) source);
+//                return jsonParser.readValueAs(targetType.getObjectType());
+
+                return JSON.parseObject(source.toString(),targetType.getObjectType());
             } else {
                 Unmarshaller unmarshaller = createUnmarshaller(targetType.getObjectType());
                 StringReader reader = new StringReader((String) source);

@@ -18,8 +18,10 @@ public final class DefaultSessionManager implements SessionManager {
     private final Map<String, Session> sessionCache = new ConcurrentHashMap<String, Session>(128, 0.75f, 32);
 
     @Override
-    public void addSession(String sessionId,Session session) {
-        sessionCache.put(sessionId, session);
+    public String addSession(Session session) {
+        String sessionId= UUID.randomUUID().toString();
+         sessionCache.put(sessionId, session);
+        return sessionId;
     }
 
     @Override

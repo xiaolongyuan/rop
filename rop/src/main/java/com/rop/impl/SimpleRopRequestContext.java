@@ -161,13 +161,20 @@ public class SimpleRopRequestContext implements RopRequestContext {
     }
 
     @Override
-    public void addSession(String sessionId,Session session) {
-        this.sessionId = sessionId;
+    public void addSession(Session session) {
+//        this.sessionId = sessionId;
         this.session = session;
         if (ropContext != null && ropContext.getSessionManager() != null) {
-            ropContext.getSessionManager().addSession(sessionId,session);
+            this.sessionId =  ropContext.getSessionManager().addSession(session);
         }
 
+    }
+
+    @Override
+    public void modifySession(String sessionId, Session session){
+        if (ropContext != null && ropContext.getSessionManager() != null) {
+            ropContext.getSessionManager().modifySession(sessionId,session);
+        }
     }
 
 

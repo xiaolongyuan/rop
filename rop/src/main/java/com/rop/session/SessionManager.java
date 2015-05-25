@@ -13,7 +13,7 @@ public interface SessionManager {
      *
      * @param session
      */
-    void addSession(String sessionId, Session session);
+    String addSession(Session session);
 
     /**
      * 会话内容变化，修改内容
