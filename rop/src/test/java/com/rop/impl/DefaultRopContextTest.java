@@ -15,6 +15,7 @@ import org.springframework.core.annotation.AnnotationUtils;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -62,6 +63,9 @@ public class DefaultRopContextTest {
         when(context.getType("service1")).thenReturn(withGroupServiceClass);
         RopContext ropContext = new DefaultRopContext(context);
 
+
+
+
         //method1:都在ServiceMethodGroup中定义，在ServiceMethod中直接采用
         ServiceMethodHandler handler = ropContext.getServiceMethodHandler("service.method1", "1.0");
         ServiceMethodDefinition definition = handler.getServiceMethodDefinition();
@@ -89,6 +93,13 @@ public class DefaultRopContextTest {
         assertEquals(definition2.isNeedInSession(), true);
         assertEquals(definition2.getTimeout(), 200);
         assertEquals(definition2.getVersion(), "2.0");
+
+
+        Map<String, ServiceMethodHandler> serviceMethodHandlerMap = ropContext.getAllServiceMethodHandlers();
+
+        for (String key : serviceMethodHandlerMap.keySet()) {
+            System.out.println(key+" : "+serviceMethodHandlerMap.get(key));
+        }
     }
 
     @Test

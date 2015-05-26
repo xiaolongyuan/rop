@@ -4,6 +4,7 @@
  */
 package com.rop.security;
 
+import com.rop.RopRequestContext;
 import com.rop.session.Session;
 
 /**
@@ -13,11 +14,12 @@ import com.rop.session.Session;
  *
  * @author 陈雄华
  * @version 1.0
+ * @since  1.1 修改默认实现 筱龙缘 2015.05.26
  */
 public class DefaultInvokeTimesController implements InvokeTimesController {
 
 
-    public void caculateInvokeTimes(String appKey, Session session,String method) {
+    public void caculateInvokeTimes(RopRequestContext requestContext,Boolean isInvoke) {
     }
 
 

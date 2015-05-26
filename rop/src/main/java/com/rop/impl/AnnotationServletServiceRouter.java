@@ -6,6 +6,7 @@ package com.rop.impl;
 
 import com.rop.*;
 import com.rop.MessageFormat;
+import com.rop.client.CompositeResponse;
 import com.rop.config.SystemParameterNames;
 import com.rop.event.*;
 import com.rop.marshaller.JacksonJsonRopMarshaller;
@@ -13,10 +14,7 @@ import com.rop.marshaller.JaxbXmlRopMarshaller;
 import com.rop.marshaller.MessageMarshallerUtils;
 import com.rop.request.RopRequestMessageConverter;
 import com.rop.request.UploadFileConverter;
-import com.rop.response.ErrorResponse;
-import com.rop.response.RejectedServiceResponse;
-import com.rop.response.ServiceUnavailableErrorResponse;
-import com.rop.response.TimeoutErrorResponse;
+import com.rop.response.*;
 import com.rop.security.*;
 import com.rop.security.SecurityManager;
 import com.rop.session.DefaultSessionManager;
@@ -211,12 +209,16 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
 
         //初始化事件发布器
         this.ropEventMulticaster = buildRopEventMulticaster();
+        
+        //产生服务方法注册完毕事件
+        fireServiceMethodRopEvent();
 
         //注册会话绑定拦截器
         this.addInterceptor(new SessionBindInterceptor());
 
         //初始化信息源
         initMessageSource();
+
 
         //产生Rop框架初始化事件
         fireAfterStartedRopEvent();
@@ -425,6 +427,8 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
 
             RopRequestContext ropRequestContext = null;
             RopRequest ropRequest = null;
+//            CompositeResponse response = null;
+            boolean isInvoke = true;
             try {
                 //用系统级参数构造一个RequestContext实例（第一阶段绑定）
                 ropRequestContext = requestContextBuilder.buildBySysParams(
@@ -460,6 +464,8 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
                 }
                 //输出响应
                 writeResponse(ropRequestContext.getRopResponse(), servletResponse, ropRequestContext.getMessageFormat(), jsonpCallback);
+                //设置本次调用成功与否
+                isInvoke = true;
             } catch (Throwable e) {
                 if (ropRequestContext != null) {
                     String method = ropRequestContext.getMethod();
@@ -479,11 +485,13 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
             } finally {
                 if (ropRequestContext != null) {
 
+
                     //发布服务完成事件
                     ropRequestContext.setServiceEndTime(System.currentTimeMillis());
+
                     //完成一次服务请求，计算次数
-                    invokeTimesController.caculateInvokeTimes(ropRequestContext.getAppKey(), ropRequestContext
-                            .getSession(),ropRequestContext.getMethod());
+                    invokeTimesController.caculateInvokeTimes(ropRequestContext,isInvoke);
+
                     fireAfterDoServiceEvent(ropRequestContext);
                 }
             }
@@ -509,6 +517,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         DefaultRopContext defaultRopContext = new DefaultRopContext(this.applicationContext);
         defaultRopContext.setSignEnable(this.signEnable);
         defaultRopContext.setSessionManager(sessionManager);
+
         return defaultRopContext;
     }
 
@@ -529,6 +538,14 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         }
 
         return simpleRopEventMulticaster;
+    }
+
+    /**
+     * 发布服务方法事件
+     */
+    private void fireServiceMethodRopEvent() {
+        ServiceMethodRopEvent ropEvent = new ServiceMethodRopEvent(this, this.ropContext);
+        this.ropEventMulticaster.multicastEvent(ropEvent);
     }
 
     /**

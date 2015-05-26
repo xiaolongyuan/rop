@@ -4,6 +4,7 @@
  */
 package com.rop.security;
 
+import com.rop.RopRequestContext;
 import com.rop.session.Session;
 
 /**
@@ -18,10 +19,10 @@ public interface InvokeTimesController {
 
     /**
      * 计算应用、会话及用户服务调度总数
-     * @param appKey
-     * @param session
+     * @param requestContext 请求上下文
+     * @param isInvoke 调用是否正常
      */
-    void caculateInvokeTimes(String appKey, Session session,String method);
+    void caculateInvokeTimes(RopRequestContext requestContext,Boolean isInvoke);
 
     /**
      * 用户服务访问次数是否超限
