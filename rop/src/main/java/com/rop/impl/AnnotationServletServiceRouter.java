@@ -209,7 +209,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
 
         //初始化事件发布器
         this.ropEventMulticaster = buildRopEventMulticaster();
-        
+
         //产生服务方法注册完毕事件
         fireServiceMethodRopEvent();
 
@@ -218,7 +218,6 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
 
         //初始化信息源
         initMessageSource();
-
 
         //产生Rop框架初始化事件
         fireAfterStartedRopEvent();

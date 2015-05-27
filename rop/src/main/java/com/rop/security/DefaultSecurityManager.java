@@ -110,7 +110,7 @@ public class DefaultSecurityManager implements SecurityManager {
                                        context.getMethod(),
                                        SystemParameterNames.getTimestamp());
         } else {
-            if (!ropContext.isValidTimestamp(context.getMethod(), context.getTimestamp())) {
+            if (!ropContext.isValidTimestamp(context.getTimestamp())) {
                 return MainErrors.getError(
                         MainErrorType.INVALID_TIMESTAMP, context.getLocale(),
                         context.getMethod(), context.getTimestamp());

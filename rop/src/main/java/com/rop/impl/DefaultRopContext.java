@@ -9,6 +9,7 @@ import com.rop.annotation.*;
 import com.rop.config.SystemParameterNames;
 import com.rop.request.UploadFile;
 import com.rop.session.SessionManager;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -69,19 +70,20 @@ public class DefaultRopContext implements RopContext {
         return serviceHandlerMap.containsKey(ServiceMethodHandler.methodWithVersion(methodName, version));
     }
 
-    public  boolean isValidTimestamp(String methodName, Long timestamp){
+    public boolean isValidTimestamp(Long timestamp){
 
         Date date  = new Date(timestamp);
 
-        if(!date.before(new Date(timestamp + (10 * 60 * 1000)))){
+        if(!date.before(DateTime.now().plusSeconds(10 * 60).toDate())){
             return false;
         }
-        if (!date.after(new Date(timestamp - (10 * 60 * 1000)))){
+        if (!date.after(DateTime.now().plusSeconds(-10 * 60).toDate())){
             return false;
         }
 
         return true;
     }
+
 
 
     public boolean isVersionObsoleted(String methodName, String version) {
