@@ -49,12 +49,12 @@ public class RopServlet extends HttpServlet {
      * @throws ServletException
      * @throws IOException
      */
-
+    @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         serviceRouter.service(req, resp);
     }
 
-
+    @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         ApplicationContext ctx = getApplicationContext(servletConfig);
         this.serviceRouter = ctx.getBean(ServiceRouter.class);
@@ -63,6 +63,7 @@ public class RopServlet extends HttpServlet {
                     "的Bean,请在Spring配置文件中通过<aop:annotation-driven/>安装rop框架。");
         }
     }
+
 
     private ApplicationContext getApplicationContext(ServletConfig servletConfig) {
         return (ApplicationContext) servletConfig.getServletContext().getAttribute(

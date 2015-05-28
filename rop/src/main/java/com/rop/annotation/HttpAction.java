@@ -4,6 +4,8 @@
  */
 package com.rop.annotation;
 
+import org.springframework.util.StringUtils;
+
 /**
  * <pre>
  *   请求类型的方法
@@ -11,17 +13,30 @@ package com.rop.annotation;
  *
  * @author 陈雄华
  * @version 1.0
+ * @sine 1.1 添加新方法 筱龙缘 2015.05.27
  */
 public enum HttpAction {
 
-    GET, POST;
+
+    GET, POST,PUT,DELETE;
 
     public static HttpAction fromValue(String value) {
-        if (GET.name().equalsIgnoreCase(value)) {
-            return GET;
-        } else if (POST.name().equalsIgnoreCase(value)) {
+
+        if(!StringUtils.hasText(value)){
             return POST;
-        } else {
+        }
+
+        value = value.toUpperCase();
+
+        if (GET.name().equals(value)) {
+            return GET;
+        } else if (POST.name().equals(value)) {
+            return POST;
+        } else if (PUT.name().equals(value)) {
+            return PUT;
+        } else if (DELETE.name().equals(value)) {
+            return DELETE;
+        }else {
             return POST;
         }
     }

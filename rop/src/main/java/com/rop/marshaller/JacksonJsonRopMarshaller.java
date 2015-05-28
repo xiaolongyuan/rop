@@ -6,14 +6,9 @@ package com.rop.marshaller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.JsonEncoding;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.AnnotationIntrospector;
+
+import com.alibaba.fastjson.util.IOUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationConfig;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
 import com.rop.RopException;
 import com.rop.RopMarshaller;
 
@@ -31,14 +26,16 @@ import java.io.OutputStream;
  */
 public class JacksonJsonRopMarshaller implements RopMarshaller {
 
-//    private static ObjectMapper objectMapper;
+    private static ObjectMapper objectMapper;
 
     public void marshaller(Object object, OutputStream outputStream) {
         try {
+//            objectMapper.readValue()
 //            JsonGenerator jsonGenerator =
 //                    getObjectMapper().getJsonFactory()
 //                    .createJsonGenerator(outputStream, JsonEncoding.UTF8);
 //            getObjectMapper().writeValue(jsonGenerator,object);
+
 
             outputStream.write(JSON.toJSONBytes(object,new SerializerFeature[]{
                     SerializerFeature.WriteNullStringAsEmpty,
