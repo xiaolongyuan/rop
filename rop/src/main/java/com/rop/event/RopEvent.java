@@ -5,6 +5,7 @@
 package com.rop.event;
 
 import com.rop.RopContext;
+import org.springframework.context.ApplicationEvent;
 
 import java.util.EventObject;
 
@@ -16,7 +17,7 @@ import java.util.EventObject;
  * @author 陈雄华
  * @version 1.0
  */
-public abstract class RopEvent extends EventObject {
+public abstract class RopEvent  extends ApplicationEvent {
 
     private RopContext ropContext;
 

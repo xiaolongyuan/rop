@@ -20,7 +20,7 @@ public class RopNamespaceHandler extends NamespaceHandlerSupport {
     public void init() {
         registerBeanDefinitionParser("annotation-driven", new AnnotationDrivenBeanDefinitionParser());
         registerBeanDefinitionParser("interceptors", new InterceptorsBeanDefinitionParser());
-        registerBeanDefinitionParser("listeners", new ListenersBeanDefinitionParser());
+//        registerBeanDefinitionParser("listeners", new ListenersBeanDefinitionParser());
         registerBeanDefinitionParser("sysparams", new SystemParameterNamesBeanDefinitionParser());
     }
 }

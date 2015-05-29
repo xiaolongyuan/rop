@@ -68,11 +68,11 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
 
     private RopContext ropContext;
 
-    private RopEventMulticaster ropEventMulticaster;
+//    private RopEventMulticaster ropEventMulticaster;
 
     private List<Interceptor> interceptors = new ArrayList<Interceptor>();
 
-    private List<RopEventListener> listeners = new ArrayList<RopEventListener>();
+//    private List<RopEventListener> listeners = new ArrayList<RopEventListener>();
 
     private boolean signEnable = true;
 
@@ -208,7 +208,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         this.ropContext = buildRopContext();
 
         //初始化事件发布器
-        this.ropEventMulticaster = buildRopEventMulticaster();
+//        this.ropEventMulticaster = buildRopEventMulticaster();
 
         //产生服务方法注册完毕事件
         fireServiceMethodRopEvent();
@@ -368,13 +368,14 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         }
     }
 
-
-    public void addListener(RopEventListener listener) {
-        this.listeners.add(listener);
-        if (logger.isDebugEnabled()) {
-            logger.debug("add  listener {}",listener.getClass().getName());
-        }
-    }
+//
+//    public void addListener(RopEventListener listener) {
+//        this.listeners.add(listener);
+//        applicationContext.
+//        if (logger.isDebugEnabled()) {
+//            logger.debug("add  listener {}",listener.getClass().getName());
+//        }
+//    }
 
     public int getServiceTimeoutSeconds() {
         return serviceTimeoutSeconds > 0 ? serviceTimeoutSeconds : Integer.MAX_VALUE;
@@ -520,31 +521,32 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         return defaultRopContext;
     }
 
-    private RopEventMulticaster buildRopEventMulticaster() {
-
-        SimpleRopEventMulticaster simpleRopEventMulticaster = new SimpleRopEventMulticaster();
-
-        //设置异步执行器
-        if (this.threadPoolExecutor != null) {
-            simpleRopEventMulticaster.setExecutor(this.threadPoolExecutor);
-        }
-
-        //添加事件监听器
-        if (this.listeners != null && this.listeners.size() > 0) {
-            for (RopEventListener ropEventListener : this.listeners) {
-                simpleRopEventMulticaster.addRopListener(ropEventListener);
-            }
-        }
-
-        return simpleRopEventMulticaster;
-    }
+//    private RopEventMulticaster buildRopEventMulticaster() {
+//
+//        SimpleRopEventMulticaster simpleRopEventMulticaster = new SimpleRopEventMulticaster();
+//
+//        //设置异步执行器
+//        if (this.threadPoolExecutor != null) {
+//            simpleRopEventMulticaster.setExecutor(this.threadPoolExecutor);
+//        }
+//
+//        //添加事件监听器
+//        if (this.listeners != null && this.listeners.size() > 0) {
+//            for (RopEventListener ropEventListener : this.listeners) {
+//                simpleRopEventMulticaster.addRopListener(ropEventListener);
+//            }
+//        }
+//
+//        return simpleRopEventMulticaster;
+//    }
 
     /**
      * 发布服务方法事件
      */
     private void fireServiceMethodRopEvent() {
         ServiceMethodRopEvent ropEvent = new ServiceMethodRopEvent(this, this.ropContext);
-        this.ropEventMulticaster.multicastEvent(ropEvent);
+        this.applicationContext.publishEvent(ropEvent);
+//        this.ropEventMulticaster.multicastEvent(ropEvent);
     }
 
     /**
@@ -552,7 +554,8 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
      */
     private void fireAfterStartedRopEvent() {
         AfterStartedRopEvent ropEvent = new AfterStartedRopEvent(this, this.ropContext);
-        this.ropEventMulticaster.multicastEvent(ropEvent);
+//        this.ropEventMulticaster.multicastEvent(ropEvent);
+        this.applicationContext.publishEvent(ropEvent);
     }
 
     /**
@@ -560,15 +563,20 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
      */
     private void fireBeforeCloseRopEvent() {
         PreCloseRopEvent ropEvent = new PreCloseRopEvent(this, this.ropContext);
-        this.ropEventMulticaster.multicastEvent(ropEvent);
+//        this.ropEventMulticaster.multicastEvent(ropEvent);
+        this.applicationContext.publishEvent(ropEvent);
     }
 
     private void fireAfterDoServiceEvent(RopRequestContext ropRequestContext) {
-        this.ropEventMulticaster.multicastEvent(new AfterDoServiceEvent(this, ropRequestContext));
+//        this.ropEventMulticaster.multicastEvent(new AfterDoServiceEvent(this, ropRequestContext));
+        RopEvent ropEvent = new AfterDoServiceEvent(this, ropRequestContext);
+        this.applicationContext.publishEvent(ropEvent);
     }
 
     private void firePreDoServiceEvent(RopRequestContext ropRequestContext) {
-        this.ropEventMulticaster.multicastEvent(new PreDoServiceEvent(this, ropRequestContext));
+//        this.ropEventMulticaster.multicastEvent(new PreDoServiceEvent(this, ropRequestContext));
+        RopEvent ropEvent = new PreDoServiceEvent(this, ropRequestContext);
+        this.applicationContext.publishEvent(ropEvent);
     }
 
     /**
@@ -724,17 +732,17 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         return threadPoolExecutor;
     }
 
-    public RopEventMulticaster getRopEventMulticaster() {
-        return ropEventMulticaster;
-    }
+//    public RopEventMulticaster getRopEventMulticaster() {
+//        return ropEventMulticaster;
+//    }
 
     public List<Interceptor> getInterceptors() {
         return interceptors;
     }
 
-    public List<RopEventListener> getListeners() {
-        return listeners;
-    }
+//    public List<RopEventListener> getListeners() {
+//        return listeners;
+//    }
 
     public boolean isSignEnable() {
         return signEnable;

@@ -4,7 +4,7 @@
  */
 package com.rop;
 
-import com.rop.event.RopEventListener;
+
 import com.rop.security.InvokeTimesController;
 import com.rop.session.SessionManager;
 import org.springframework.context.ApplicationContext;
@@ -76,12 +76,12 @@ public interface ServiceRouter {
      */
     void addInterceptor(Interceptor interceptor);
 
-    /**
-     * 注册监听器
-     *
-     * @param listener
-     */
-    void addListener(RopEventListener listener);
+//    /**
+//     * 注册监听器
+//     *
+//     * @param listener
+//     */
+//    void addListener(RopEventListener listener);
 
     /**
      * 设置{@link com.rop.security.SecurityManager}

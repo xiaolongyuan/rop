@@ -8,8 +8,6 @@ import com.rop.Interceptor;
 import com.rop.RopException;
 import com.rop.ThreadFerry;
 import com.rop.config.InterceptorHolder;
-import com.rop.config.RopEventListenerHodler;
-import com.rop.event.RopEventListener;
 import com.rop.security.*;
 import com.rop.session.SessionManager;
 import org.slf4j.Logger;
@@ -168,16 +166,16 @@ public class AnnotationServletServiceRouterFactoryBean
             }
         }
 
-        //注册监听器
-        ArrayList<RopEventListener> listeners = getListeners();
-        if (listeners != null) {
-            for (RopEventListener listener : listeners) {
-                serviceRouter.addListener(listener);
-            }
-            if (logger.isInfoEnabled()) {
-                logger.info("register total {} listeners",listeners.size());
-            }
-        }
+//        //注册监听器
+//        ArrayList<RopEventListener> listeners = getListeners();
+//        if (listeners != null) {
+//            for (RopEventListener listener : listeners) {
+//                serviceRouter.addListener(listener);
+//            }
+//            if (logger.isInfoEnabled()) {
+//                logger.info("register total {} listeners",listeners.size());
+//            }
+//        }
 
         //设置Spring上下文信息
         serviceRouter.setApplicationContext(this.applicationContext);
@@ -225,20 +223,20 @@ public class AnnotationServletServiceRouterFactoryBean
         }
     }
 
-    private ArrayList<RopEventListener> getListeners() {
-        Map<String, RopEventListenerHodler> listenerMap = this.applicationContext.getBeansOfType(RopEventListenerHodler.class);
-        if (listenerMap != null && listenerMap.size() > 0) {
-            ArrayList<RopEventListener> ropEventListeners = new ArrayList<RopEventListener>(listenerMap.size());
-
-            //从Spring容器中获取Interceptor
-            for (RopEventListenerHodler listenerHolder : listenerMap.values()) {
-                ropEventListeners.add(listenerHolder.getRopEventListener());
-            }
-            return ropEventListeners;
-        } else {
-            return null;
-        }
-    }
+//    private ArrayList<RopEventListener> getListeners() {
+//        Map<String, RopEventListenerHodler> listenerMap = this.applicationContext.getBeansOfType(RopEventListenerHodler.class);
+//        if (listenerMap != null && listenerMap.size() > 0) {
+//            ArrayList<RopEventListener> ropEventListeners = new ArrayList<RopEventListener>(listenerMap.size());
+//
+//            //从Spring容器中获取Interceptor
+//            for (RopEventListenerHodler listenerHolder : listenerMap.values()) {
+//                ropEventListeners.add(listenerHolder.getRopEventListener());
+//            }
+//            return ropEventListeners;
+//        } else {
+//            return null;
+//        }
+//    }
 
     public void setFormattingConversionService(FormattingConversionService formattingConversionService) {
         this.formattingConversionService = formattingConversionService;
