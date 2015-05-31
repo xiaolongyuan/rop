@@ -1,7 +1,6 @@
 package com.rop.event;
 
 import org.springframework.context.ApplicationEvent;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.SmartApplicationListener;
 
 /**
@@ -16,7 +15,7 @@ public class RopEventListener<E extends RopEvent> implements SmartApplicationLis
 
     @Override
     public boolean supportsEventType(Class<? extends ApplicationEvent> eventType) {
-        return eventType == E;
+        return eventType == null;
     }
 
     @Override
