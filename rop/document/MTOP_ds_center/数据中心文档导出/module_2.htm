@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+				<head>
+			
+			<meta name="generator" content="www.DrExplain.com" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<title>主题: 开发环境搭建与应用部署</title>
+<link rel="stylesheet" href="de_style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+					<script type="text/javascript" src="javascript_browser_detection.js"></script>
+					<script type="text/javascript" src="resize.js"></script>
+					<script type="text/javascript" src="lzw.js"></script>
+					<script type="text/javascript" src="hidemenu.js"></script>
+				
+						<script type="text/javascript" src="tabber.js"></script>
+						<script type="text/javascript" src="tabberoptions.js"></script>
+					
+						<script type="text/javascript" src="contextmenu.js"></script>
+						<script type="text/javascript" src="xmlengine.js"></script>
+					
+						<script type="text/javascript" src="search.js"></script>
+					</head>
+<body>
+			<table id="de_hd" cellpadding="0" cellspacing="0" style="border: none 0px black; width: 100%;"><tr style="border: none 0px black; width: 100%;"><td style="border: none 0px black; width: 100%;"><!--Header--><div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<!--End of header--></td></tr></table>
+			<table id="mainTable">
+<tr id="trMain">
+					
+					<td id="sectionNav"><!--DrExplain navigation section--><div class="tabber" id="menutabber">
+<div class="tabbertab" title="菜单" id="tabMenu">
+<table class="menutable noscript" cellpadding="3" cellspacing="0" id="Table2">
+<tr class="menu_topic_opened" id="e">
+<td class="menu_topic">
+<div><img alt="" style="border: 0;" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="application.htm">Data and Service Center</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_1">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_1.htm">首页</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_2">
+<td class="menu_topic_active">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu_active" href="module_2.htm">开发环境搭建与应用部署</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_3">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_3.htm">数据服务中心接口说明</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_4">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_4.htm">数据服务中心接口参数格式</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_5">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_5.htm">数据中心服务集成</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_6">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_6.htm">下载</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tabbertab tabbertabhide" title="索引" id="tabIndex"><!--Index tab--></div>
+<div class="tabbertab tabbertabhide" title="搜索" id="tabSearch">
+<div id="search_controls">
+<form onsubmit="return SubmitForm()" id="search_form" action="">
+<div>
+<input type="text" id="search" name="search" />
+<input type="button" id="search1" name="search1" value="搜索" onclick="return SubmitForm()" />
+</div>
+</form>
+</div>
+<div id="search_output"><!--Search output--></div>
+</div>
+<table style="border-style: none; width: 100%; padding: 0px; margin: 0px;">
+<tr style="border-style: none;">
+<td style="border-style: none; width: 100%;">
+<noscript><p>To properly display this page you need a browser with JavaScript support.</p></noscript>
+</td>
+</tr>
+</table>
+</div><!--End of DrExplain navigation section--></td>
+<td id="sectionMain"><!--DrExplain page content--><div class="yui-u first" id="contentSection" style="height: 100%; overflow: hidden; padding-right: 0px;">
+<table class="navTable" id="navTable">
+<tbody>
+<tr>
+<td class="navLink" style=" text-align: left;"> <span style="font-size: 8pt;">
+<a class="navigation" href="module_1.htm" id="a1prev">&lt; 上一页</a>
+</span> </td>
+<td class="navLink" style="text-align: center;">  </td>
+<td class="navLink" style="text-align: right;"> <span style="font-size: 8pt;">
+<a class="navigation" href="module_3.htm" id="a1next">下一页 &gt;</a>
+</span> </td>
+</tr>
+</tbody>
+</table> <div class="contentArea" id="contentArea">
+<a id="top" name="top" /><table style="border-style: none; width: 100%; padding: 0px; margin: 0px;"><tr style="border-style: none;"><td style="border-style: none; width: 100%;"><div class="description_on_page"><div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_54FF43FEAF"><strong>淘宝Android Data and Service Center使用说明</strong></span></div>
+<div class="p" style="text-align: right; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<table height="98" cellspacing="0" cellpadding="0" class="de_tbl_661" width="622px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="139" class="de_col_178"/>
+<col width="483" class="de_col_483"/><tr style="height: 26px">
+<td class="de_td_178" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 139px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="126px" height="19px" src="drex_module_2_image_0.png"/></div>
+</td><td class="de_td_483" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 483px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3B3A075E7F">数据服务中心安装包</span></div>
+</td></tr><tr style="height: 25px">
+<td class="de_td_178" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 139px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="126px" height="18px" src="drex_module_2_image_1.png"/></div>
+</td><td class="de_td_483" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 483px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3B3A075E7F">数据服务中心对外调用接口jar包(集成时使用)</span></div>
+</td></tr><tr style="height: 29px">
+<td class="de_td_178" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 139px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="172px" height="22px" src="drex_module_2_image_2.png"/></div>
+</td><td class="de_td_483" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 483px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3B3A075E7F">数据服务中心服务接口说明</span></div>
+</td></tr><tr style="height: 18px">
+<td class="de_td_178" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 139px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+</td><td class="de_td_483" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 483px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: center; direction: ltr; margin-left:0px">
+<a class="local_link" href="module_6.htm"><span class="de_BBB8D37A2A">下载</span></a></div>
+</td></tr></table></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">SDK开发包中包含以下3个文件:</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">&#160; &#160; 1：tbDataService.apk（</span><span class="de_3B3A075E7F">数据服务中心安装包</span><span class="de_16E794A87C">）</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">&#160; &#160; 2：tbDataService.jar(</span><span class="de_3B3A075E7F">数据服务中心对外调用接口jar包，集成时使用</span><span class="de_16E794A87C">)</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">&#160; &#160; 3：数据服务中心接口说明.docx(</span><span class="de_3B3A075E7F">数据服务中心服务接口说明</span><span class="de_16E794A87C">)</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">应用部署</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">1.直接安装</span></div>
+<div class="p" style="text-align: center; direction: ltr; margin-left:0px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="797px" height="340px" src="drex_module_2_image_3.png"/></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">2.捆绑安装(把tbDataService.apk捆绑到第三方应用的apk中去)</span></div>
+<div class="p" style="text-align: center; direction: ltr; margin-left:0px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="910px" height="340px" src="drex_module_2_image_4.png"/></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_3C8D7B3EB0">具体请参看</span><a class="local_link" href="module_5.htm"><span class="de_7434DA3F56"> 数据中心服务集成</span></a></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">开发环境准备</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">1. 安装tbDataService.apk</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_16E794A87C">&#160; &#160; 从下载的SDK压缩包中提取</span><span class="de_3188359E34">tbDataService</span><span class="de_E81CB1BD18">.apk</span><span class="de_787313CBAD">，</span><span class="de_3188359E34">直接安装到手机或模拟器即可。操作完成之后，在系统中检查</span><span class="de_E81CB1BD18">&quot;</span><span class="de_3188359E34">设置</span><span class="de_E81CB1BD18">&quot; -&gt; &quot;</span><span class="de_3188359E34">应用程序</span><span class="de_E81CB1BD18">&quot; -&gt; &quot;</span><span class="de_3188359E34">管理应用程序</span><span class="de_E81CB1BD18">&quot;</span><span class="de_3188359E34">，如果在应用程序列表中，能找到PlatformService，说明数据服务中心已经安装成功。</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3188359E34">2. 搭建eclipse开发环境</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3188359E34">&#160; &#160; &#160; 2.1 在</span><span class="de_E81CB1BD18">eclipse</span><span class="de_3188359E34">集成环境中，选择新建一个</span><span class="de_E81CB1BD18">Android Project</span><span class="de_16E794A87C">（如图1）</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="752px" height="543px" src="drex_module_2_image_5.png"/></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_787313CBAD">2.2: 点击Project-&gt;Properties-&gt;Libraries（如图2）</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="751px" height="543px" src="drex_module_2_image_6.png"/></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_787313CBAD">2.3:点击Add External JARs...选择SDK文件夹中的tbDataService.jar，点击OK（如图3）</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="751px" height="543px" src="drex_module_2_image_7.png"/></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<img alt="" style="border: solid 0px; " class=" de_780D01ADE8" width="752px" height="543px" src="drex_module_2_image_8.png"/></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3B3A075E7F">&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_787313CBAD">2.4 </span><span class="de_D018EAE774">绑定数据中心服务。</span><span class="de_34C43CE25A">绑定</span><span class="de_3188359E34">过程，一般包含以下的步骤。在不同的应用程序中，这些步骤基本上固定不变。</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_A34636DE0F">&#160; </span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+<table height="1180" cellspacing="0" cellpadding="0" class="de_tbl_935" width="935px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="935" class="de_col_935"/><tr style="height: 1180px">
+<td class="de_td_935" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 935px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">参考代码：</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>import</strong></span><span class="de_0864F56C3F"> com.taobao.platformservice.ITBPlatformService;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>import</strong></span><span class="de_0864F56C3F"> com.taobao.platformservice.ITBRemoteCallback;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>import</strong></span><span class="de_0864F56C3F"> com.taobao.platformservice.TBAppInfo;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>import</strong></span><span class="de_0864F56C3F"> com.taobao.platformservice.TBAppInfoParcelable;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">常量定义</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>static</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>final</strong></span><span class="de_0864F56C3F">&#160; String </span><span class="de_CC86F78197">TTID</span><span class="de_0864F56C3F"> = </span><span class="de_A4DCA1D55B">&quot;205200@tbdemo2.0_android1.6&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>static</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>final</strong></span><span class="de_0864F56C3F"> String&#160; </span><span class="de_CC86F78197">APPKEY</span><span class="de_0864F56C3F"> = </span><span class="de_A4DCA1D55B">&quot;12170061&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>static</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>final</strong></span><span class="de_0864F56C3F">&#160; String </span><span class="de_CC86F78197">APPSECRET</span><span class="de_0864F56C3F"> = </span><span class="de_A4DCA1D55B">&quot;fd05a753c73772f07124cf184a4cba72&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">定义接口常量</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> ITBPlatformService </span><span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> ServiceConnection </span><span class="de_C86BAC4BFF">m_tbConnection</span><span class="de_0864F56C3F"> = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> ServiceConnection() {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_75B4A9AAC0">@Override</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> onServiceDisconnected(ComponentName name) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_CC86F78197">TAG</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;onServiceDisconnected : &quot;</span><span class="de_0864F56C3F"> + name.toString());</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F"> = </span><span class="de_41998EA5A4"><strong>null</strong></span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_75B4A9AAC0">@Override</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> onServiceConnected(ComponentName name, IBinder service) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">&#160;&#160; &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_CC86F78197">TAG</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;onServiceConnected&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">&#160;&#160; &#160; &#160; &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">查询接口</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F"> = ITBPlatformService.Stub.</span><span class="de_99A6B600C9">asInterface</span><span class="de_0864F56C3F">(service);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; 	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_41998EA5A4"><strong>try</strong></span><span class="de_0864F56C3F"> {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; 	&#160; &#160; 	 &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">注册APP</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">	Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_CC86F78197">TAG</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;mCallback &quot;</span><span class="de_0864F56C3F">+ </span><span class="de_C86BAC4BFF">m_tbCallback</span><span class="de_0864F56C3F">.toString());</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">TBAppInfo appinfo = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> TBAppInfo(</span><span class="de_A4DCA1D55B">&quot;com.taobao.tbdemoclinet&quot;</span><span class="de_0864F56C3F">, </span><span class="de_CC86F78197">APPKEY</span><span class="de_0864F56C3F">, </span><span class="de_CC86F78197">APPSECRET</span><span class="de_0864F56C3F">, </span><span class="de_CC86F78197">TTID</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">TBAppInfoParcelable appinfoparcelable = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> TBAppInfoParcelable(appinfo);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; 	&#160; &#160; 	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">拿到应用程序唯一标识码</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_C86BAC4BFF">m_appUID</span><span class="de_0864F56C3F"> = </span><span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F">.registerApp(appinfoparcelable, </span><span class="de_C86BAC4BFF">m_tbCallback</span><span class="de_0864F56C3F">); &#160; &#160; &#160; &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_CC86F78197">TAG</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;m_appUID &quot;</span><span class="de_0864F56C3F">+ </span><span class="de_C86BAC4BFF">m_appUID</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">} </span><span class="de_41998EA5A4"><strong>catch</strong></span><span class="de_0864F56C3F"> (RemoteException e) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_CC86F78197">TAG</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;&quot;</span><span class="de_0864F56C3F">, e);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">} &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">};</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_99C877624C">//</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_99C877624C">//</span><span class="de_41BF74EA43"> </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_99C877624C">// </span><span class="de_1C40E0AF9B">绑定服务</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F">(</span><span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F"> == </span><span class="de_41998EA5A4"><strong>null</strong></span><span class="de_0864F56C3F">){</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">	bindService(</span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Intent(ITBPlatformService.</span><span class="de_41998EA5A4"><strong>class</strong></span><span class="de_0864F56C3F">.getName()), </span><span class="de_C86BAC4BFF">m_tbConnection</span><span class="de_0864F56C3F">, Context.</span><span class="de_CC86F78197">BIND_AUTO_CREATE</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_99C877624C">//</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_99C877624C">//</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_99C877624C">// </span><span class="de_1C40E0AF9B">如果服务不再需要,需解绑服务</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F">(</span><span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F">!=</span><span class="de_41998EA5A4"><strong>null</strong></span><span class="de_0864F56C3F">){</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_41998EA5A4"><strong>try</strong></span><span class="de_0864F56C3F"> {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">	</span><span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F">.removeApp(</span><span class="de_C86BAC4BFF">m_appUID</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">&#160;&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">} </span><span class="de_41998EA5A4"><strong>catch</strong></span><span class="de_0864F56C3F"> (RemoteException e) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_CC86F78197">TAG</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;&quot;</span><span class="de_0864F56C3F">, e);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">unbindService(</span><span class="de_C86BAC4BFF">m_tbConnection</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span></div>
+</td></tr></table></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3B3A075E7F">&#160;&#160; &#160; &#160; &#160; &#160; &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_3B3A075E7F">&#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_787313CBAD">2.5 </span><span class="de_3188359E34">实现数据中心回调接口</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+<table height="1667" cellspacing="0" cellpadding="0" class="de_tbl_935" width="935px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="935" class="de_col_935"/><tr style="height: 1667px">
+<td class="de_td_935" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 935px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">数据服务中心回调接口</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> ITBRemoteCallback.Stub </span><span class="de_C86BAC4BFF">m_tbCallback</span><span class="de_0864F56C3F"> = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> ITBRemoteCallback.Stub() {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; </span><span class="de_75B4A9AAC0">@Override</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; 	</span><span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> OnResponse(String respjson) </span><span class="de_41998EA5A4"><strong>throws</strong></span><span class="de_0864F56C3F"> RemoteException {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_CC86F78197">TAG</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;OnResponse : &quot;</span><span class="de_0864F56C3F"> + respjson);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">			</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_41998EA5A4"><strong>try</strong></span><span class="de_0864F56C3F"> {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				&#160; &#160; &#160; &#160; &#160; JSONObject json = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> JSONObject(respjson);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">&#160; &#160; </span><span class="de_99C877624C">// UV</span><span class="de_1C40E0AF9B">统计</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				&#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (json.getString(</span><span class="de_A4DCA1D55B">&quot;action&quot;</span><span class="de_0864F56C3F">).equals(</span><span class="de_A4DCA1D55B">&quot;statistic&quot;</span><span class="de_0864F56C3F">)) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; Message msg = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Message();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">what</span><span class="de_0864F56C3F"> = </span><span class="de_CC86F78197">TAOBAOMSG_SHOW_UVTOAST</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">obj</span><span class="de_0864F56C3F"> = json.getString(</span><span class="de_A4DCA1D55B">&quot;ret&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">appHandler</span><span class="de_0864F56C3F">.sendMessage(msg);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				&#160; &#160; &#160; &#160; &#160; } </span><span class="de_41998EA5A4"><strong>else</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (json.getString(</span><span class="de_A4DCA1D55B">&quot;action&quot;</span><span class="de_0864F56C3F">).equals(</span><span class="de_A4DCA1D55B">&quot;login&quot;</span><span class="de_0864F56C3F">)) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_99C877624C">// </span><span class="de_1C40E0AF9B">因为在收到登录的响应的时候</span><span class="de_99C877624C">,</span><span class="de_1C40E0AF9B">都要取消先前弹出的对话框</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; MainActivity.</span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.dismiss();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; String s_sid = json.getString(</span><span class="de_A4DCA1D55B">&quot;sid&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; String token = json.getString(</span><span class="de_A4DCA1D55B">&quot;token&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; String nick = json.getString(</span><span class="de_A4DCA1D55B">&quot;nick&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F"> = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> TBLoginInfo();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">nick</span><span class="de_0864F56C3F"> = nick;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">sid</span><span class="de_0864F56C3F"> = s_sid;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">token</span><span class="de_0864F56C3F"> = token;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (s_sid != </span><span class="de_41998EA5A4"><strong>null</strong></span><span class="de_0864F56C3F"> &amp;&amp; s_sid.length() &gt; 0) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; String ret = json.getString(</span><span class="de_A4DCA1D55B">&quot;ret&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (ret.contains(</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_93D647F5A8">其它相关产品已经登录成功</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_0864F56C3F">)) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Message msg = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Message();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">what</span><span class="de_0864F56C3F"> = </span><span class="de_CC86F78197">TAOBAOMSG_OTHER_LOGIN_SUCCESS</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">obj</span><span class="de_0864F56C3F"> = </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">appHandler</span><span class="de_0864F56C3F">.sendMessage(msg);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; } </span><span class="de_41998EA5A4"><strong>else</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (ret.contains(</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_93D647F5A8">登录成功</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_0864F56C3F">)) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Message msg = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Message();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">what</span><span class="de_0864F56C3F"> = </span><span class="de_CC86F78197">TAOBAOMSG_LOGIN_SUCCESS</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">obj</span><span class="de_0864F56C3F"> = </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">appHandler</span><span class="de_0864F56C3F">.sendMessage(msg);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; } </span><span class="de_41998EA5A4"><strong>else</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (ret.contains(</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_93D647F5A8">已经登录过了</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_0864F56C3F">)) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Message msg = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Message();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">what</span><span class="de_0864F56C3F"> = </span><span class="de_CC86F78197">TAOBAOMSG_HAVE_LOGIN</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">obj</span><span class="de_0864F56C3F"> = </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">appHandler</span><span class="de_0864F56C3F">.sendMessage(msg);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				&#160; &#160; &#160; &#160; &#160; } </span><span class="de_41998EA5A4"><strong>else</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (json.getString(</span><span class="de_A4DCA1D55B">&quot;action&quot;</span><span class="de_0864F56C3F">).equals(</span><span class="de_A4DCA1D55B">&quot;logout&quot;</span><span class="de_0864F56C3F">)) {</span><span class="de_99C877624C">// </span><span class="de_1C40E0AF9B">登出</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (json.has(</span><span class="de_A4DCA1D55B">&quot;sid&quot;</span><span class="de_0864F56C3F">)) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; MainActivity.</span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.dismiss();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; String s_sid = json.getString(</span><span class="de_A4DCA1D55B">&quot;sid&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_A4DCA1D55B">&quot;MainActivity&quot;</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;s_sid:&quot;</span><span class="de_0864F56C3F"> + s_sid + </span><span class="de_A4DCA1D55B">&quot;&#160; sid:&quot;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">								&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; + MainActivity.</span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">sid</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; String ret = json.getString(</span><span class="de_A4DCA1D55B">&quot;ret&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (ret.contains(</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_93D647F5A8">退出成功</span><span class="de_A4DCA1D55B">&quot;</span><span class="de_0864F56C3F">)) {</span><span class="de_99C877624C">// </span><span class="de_1C40E0AF9B">如果是本APP注销成功</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Message msg = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Message();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">what</span><span class="de_0864F56C3F"> = </span><span class="de_CC86F78197">TAOBAOMSG_LOGOUT</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">obj</span><span class="de_0864F56C3F"> = </span><span class="de_C86BAC4BFF">loginInfo</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">appHandler</span><span class="de_0864F56C3F">.sendMessage(msg);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; } </span><span class="de_41998EA5A4"><strong>else</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (MainActivity.</span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">sid</span><span class="de_0864F56C3F">.equals(s_sid)) {</span><span class="de_99C877624C">// </span><span class="de_1C40E0AF9B">如果是其它APP注销成功,需检查注销的SID与本APP使用的SID是否匹配</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; String nick = </span><span class="de_A4DCA1D55B">&quot;&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F"> (json.has(</span><span class="de_A4DCA1D55B">&quot;nick&quot;</span><span class="de_0864F56C3F">)) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">								&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; nick = json.getString(</span><span class="de_A4DCA1D55B">&quot;nick&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Log.</span><span class="de_99A6B600C9">v</span><span class="de_0864F56C3F">(</span><span class="de_A4DCA1D55B">&quot;MainActivity&quot;</span><span class="de_0864F56C3F">, </span><span class="de_A4DCA1D55B">&quot;[Logout]&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Message msg = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Message();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">obj</span><span class="de_0864F56C3F"> = nick;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; msg.</span><span class="de_C86BAC4BFF">what</span><span class="de_0864F56C3F"> = </span><span class="de_CC86F78197">TAOBAOMSG_OTHER_LOGOUT</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">							 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_C86BAC4BFF">appHandler</span><span class="de_0864F56C3F">.sendMessage(msg);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">						&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; &#160; &#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				&#160; &#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">			&#160; &#160; &#160; &#160; &#160; } </span><span class="de_41998EA5A4"><strong>catch</strong></span><span class="de_0864F56C3F"> (JSONException e) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				 &#160; &#160; &#160; &#160; &#160; &#160; &#160; e.printStackTrace();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">			&#160; &#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; </span><span class="de_75B4A9AAC0">@Override</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; </span><span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> startActivity(String packageName, String className,</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				 &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_41998EA5A4"><strong>int</strong></span><span class="de_0864F56C3F"> iCallingPid, Bundle bundle) </span><span class="de_41998EA5A4"><strong>throws</strong></span><span class="de_0864F56C3F"> RemoteException {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">		Intent intent = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Intent(Intent.</span><span class="de_CC86F78197">ACTION_MAIN</span><span class="de_0864F56C3F">, </span><span class="de_41998EA5A4"><strong>null</strong></span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">			</span><span class="de_41998EA5A4"><strong>if</strong></span><span class="de_0864F56C3F">( bundle == </span><span class="de_41998EA5A4"><strong>null</strong></span><span class="de_0864F56C3F"> ){</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">				bundle = </span><span class="de_41998EA5A4"><strong>new</strong></span><span class="de_0864F56C3F"> Bundle();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">			}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">			</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">			 &#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>try</strong></span><span class="de_0864F56C3F">{</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">				bundle.putInt(</span><span class="de_A4DCA1D55B">&quot;CallingPid&quot;</span><span class="de_0864F56C3F">, iCallingPid);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">				intent.putExtras(bundle);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">			}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">			</span><span class="de_41998EA5A4"><strong>catch</strong></span><span class="de_0864F56C3F">(Exception e){</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:150px">
+<span class="de_0864F56C3F">				e.printStackTrace();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">			}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">			</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">			intent.setClassName(packageName, className);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_0864F56C3F">			</span><span class="de_C86BAC4BFF">activity</span><span class="de_0864F56C3F">.startActivity(intent);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">};</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span></div>
+</td></tr></table></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_A34636DE0F">*</span><span class="de_787313CBAD">这样您的APP中就已经加入了使用</span><span class="de_16E794A87C">tbDataService.apk所提供的数据服务</span><span class="de_787313CBAD">所需要的所有东西。最后就是调用数据服务中心的服务接口给它发命令让它为你工作吧。</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+<table height="148" cellspacing="0" cellpadding="0" class="de_tbl_935" width="935px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="935" class="de_col_935"/><tr style="height: 148px">
+<td class="de_td_935" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 935px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span><span class="de_1C40E0AF9B">以登录为例</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				</span><span class="de_41998EA5A4"><strong>try</strong></span><span class="de_0864F56C3F"> {		</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">											 &#160; &#160; </span><span class="de_C86BAC4BFF">m_tbService</span><span class="de_0864F56C3F">.doRequest(</span><span class="de_A4DCA1D55B">&quot;api=com.taobao.android.platformservice&amp;action=login&amp;appuid=&quot;</span><span class="de_0864F56C3F">+</span><span class="de_C86BAC4BFF">m_appUID</span><span class="de_0864F56C3F">+</span><span class="de_A4DCA1D55B">&quot;&amp;data={}&quot;</span><span class="de_0864F56C3F">);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				} </span><span class="de_41998EA5A4"><strong>catch</strong></span><span class="de_0864F56C3F"> (RemoteException e) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">					 &#160; &#160; e.printStackTrace();</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; </span><span class="de_41998EA5A4"><strong>return</strong></span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">				}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">//</span><span class="de_787313CBAD">然后就等着数据服务中心调用在2.5实现的回调接口</span><span class="de_0864F56C3F">OnResponse(String)</span><span class="de_787313CBAD">接口反馈本次调用的结果吧。</span></div>
+</td></tr></table></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+</div></td></tr></table></div> </div><!--End of DrExplain page content--></td>
+					
+				</tr>
+</table>
+			<table id="de_ft" cellpadding="0" cellspacing="0" style="border: none 0px black; width: 100%;"><tr style="border: none 0px black; width: 100%;"><td style="border: none 0px black; width: 100%;"><!--Footer--><div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<!--End of footer--></td></tr></table>
+			<script type="text/javascript">onDocumentLoaded();</script>
+</body></html>

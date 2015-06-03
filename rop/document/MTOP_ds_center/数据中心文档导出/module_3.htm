@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+				<head>
+			
+			<meta name="generator" content="www.DrExplain.com" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<title>主题: 数据服务中心接口说明</title>
+<link rel="stylesheet" href="de_style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+					<script type="text/javascript" src="javascript_browser_detection.js"></script>
+					<script type="text/javascript" src="resize.js"></script>
+					<script type="text/javascript" src="lzw.js"></script>
+					<script type="text/javascript" src="hidemenu.js"></script>
+				
+						<script type="text/javascript" src="tabber.js"></script>
+						<script type="text/javascript" src="tabberoptions.js"></script>
+					
+						<script type="text/javascript" src="contextmenu.js"></script>
+						<script type="text/javascript" src="xmlengine.js"></script>
+					
+						<script type="text/javascript" src="search.js"></script>
+					</head>
+<body>
+			<table id="de_hd" cellpadding="0" cellspacing="0" style="border: none 0px black; width: 100%;"><tr style="border: none 0px black; width: 100%;"><td style="border: none 0px black; width: 100%;"><!--Header--><div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<!--End of header--></td></tr></table>
+			<table id="mainTable">
+<tr id="trMain">
+					
+					<td id="sectionNav"><!--DrExplain navigation section--><div class="tabber" id="menutabber">
+<div class="tabbertab" title="菜单" id="tabMenu">
+<table class="menutable noscript" cellpadding="3" cellspacing="0" id="Table2">
+<tr class="menu_topic_opened" id="e">
+<td class="menu_topic">
+<div><img alt="" style="border: 0;" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="application.htm">Data and Service Center</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_1">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_1.htm">首页</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_2">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_2.htm">开发环境搭建与应用部署</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_3">
+<td class="menu_topic_active">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu_active" href="module_3.htm">数据服务中心接口说明</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_4">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_4.htm">数据服务中心接口参数格式</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_5">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_5.htm">数据中心服务集成</a>
+</div>
+</td>
+</tr>
+<tr class="menu_topic_opened" id="e_6">
+<td class="menu_topic">
+<div style="border: 0; padding-left: 10px;"><img alt="" width="15" height="10" src="bullet_topic.gif" />
+<a class="menu" href="module_6.htm">下载</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tabbertab tabbertabhide" title="索引" id="tabIndex"><!--Index tab--></div>
+<div class="tabbertab tabbertabhide" title="搜索" id="tabSearch">
+<div id="search_controls">
+<form onsubmit="return SubmitForm()" id="search_form" action="">
+<div>
+<input type="text" id="search" name="search" />
+<input type="button" id="search1" name="search1" value="搜索" onclick="return SubmitForm()" />
+</div>
+</form>
+</div>
+<div id="search_output"><!--Search output--></div>
+</div>
+<table style="border-style: none; width: 100%; padding: 0px; margin: 0px;">
+<tr style="border-style: none;">
+<td style="border-style: none; width: 100%;">
+<noscript><p>To properly display this page you need a browser with JavaScript support.</p></noscript>
+</td>
+</tr>
+</table>
+</div><!--End of DrExplain navigation section--></td>
+<td id="sectionMain"><!--DrExplain page content--><div class="yui-u first" id="contentSection" style="height: 100%; overflow: hidden; padding-right: 0px;">
+<table class="navTable" id="navTable">
+<tbody>
+<tr>
+<td class="navLink" style=" text-align: left;"> <span style="font-size: 8pt;">
+<a class="navigation" href="module_2.htm" id="a1prev">&lt; 上一页</a>
+</span> </td>
+<td class="navLink" style="text-align: center;">  </td>
+<td class="navLink" style="text-align: right;"> <span style="font-size: 8pt;">
+<a class="navigation" href="module_4.htm" id="a1next">下一页 &gt;</a>
+</span> </td>
+</tr>
+</tbody>
+</table> <div class="contentArea" id="contentArea">
+<a id="top" name="top" /><table style="border-style: none; width: 100%; padding: 0px; margin: 0px;"><tr style="border-style: none;"><td style="border-style: none; width: 100%;"><div class="description_on_page"><div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_AD585692E5">数据服务中心接口列表 </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_34C43CE25A">目前，</span><span class="de_E81CB1BD18">Android</span><span class="de_34C43CE25A">平台上的数据服务中心，主要提供以下接口，如下表所示。 </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_34C43CE25A">数据服务中心接口表</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<table height="242" cellspacing="0" cellpadding="0" class="de_tbl_935" width="877px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="100" class="de_col_158"/>
+<col width="100" class="de_col_100"/>
+<col width="677" class="de_col_677"/><tr style="height: 17px">
+<td class="de_td_158" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_529D016A04">接口名称</span></div>
+</td><td class="de_td_100" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_529D016A04">接口描述</span></div>
+</td><td class="de_td_677" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 677px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_529D016A04">接口原型</span></div>
+</td></tr><tr style="height: 84px">
+<td class="de_td_158" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">ITBPlatformService</span></div>
+</td><td class="de_td_100" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_34C43CE25A">提供外部应用直接使用数据中心服务功能</span></div>
+</td><td class="de_td_677" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 677px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">String registerApp(TBAppInfoParcelable info, ITBRemoteCallback callback);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> removeApp(String appuid);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> doRequest(String json);</span></div>
+</td></tr><tr style="height: 68px">
+<td class="de_td_158" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">ITBRemoteCallback</span></div>
+</td><td class="de_td_100" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_34C43CE25A">提供数据服务中心结果回调功能</span></div>
+</td><td class="de_td_677" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 677px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> OnResponse(String respjson);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> startActivity(String packageName, String className, </span><span class="de_41998EA5A4"><strong>int</strong></span><span class="de_0864F56C3F"> iCallingPid, Bundle bundle);</span></div>
+</td></tr><tr style="height: 30px">
+<td class="de_td_158" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">TBAppInfo</span></div>
+</td><td class="de_td_100" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_34C43CE25A">应用程序信息类</span></div>
+</td><td class="de_td_677" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 677px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">TBAppInfo(String pakageName, String appKey, String appSecret, 			String ttid);</span></div>
+</td></tr><tr style="height: 43px">
+<td class="de_td_158" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">TBAppInfoParcelable</span></div>
+</td><td class="de_td_100" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 100px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_34C43CE25A">TBAppInfo android跨进程传输容器</span></div>
+</td><td class="de_td_677" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 677px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">TBAppInfoParcelable(TBAppInfo info);</span></div>
+</td></tr></table></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">ITBPlatformService</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+<table height="372" cellspacing="0" cellpadding="0" class="de_tbl_935" width="935px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="935" class="de_col_935"/><tr style="height: 372px">
+<td class="de_td_935" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 935px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_6FB8B0EA6C"><strong>interface</strong></span><span class="de_0864F56C3F"> ITBPlatformService{</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; </span><span class="de_99C877624C">/**</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * </span><span class="de_1C40E0AF9B">服务中心注册app</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> in	 &#160; &#160; info 		</span><span class="de_1C40E0AF9B">应用程序属性</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> in	 &#160; &#160; callback&#160; 	</span><span class="de_1C40E0AF9B">注册给服务中心的用于回调的app接口，需要app自己实现</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> return appuid		</span><span class="de_1C40E0AF9B">服务中心返回给app的唯一uid</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; **/	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">	String registerApp(TBAppInfoParcelable info, ITBRemoteCallback callback);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">			 &#160; &#160; </span><span class="de_99C877624C">/**</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * </span><span class="de_1C40E0AF9B">服务中心注销app</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> in	 &#160; &#160; appuid</span><span class="de_1C40E0AF9B">服务中心返回给app的唯一uid</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; **/	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">	</span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> removeApp(String appuid);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; </span><span class="de_99C877624C">/**</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * </span><span class="de_1C40E0AF9B">向服务中心请求服务</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> in	 &#160; &#160; json</span><span class="de_1C40E0AF9B">字符串格式的请求命令</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; **/</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	&#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> doRequest(String json);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">}	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span></div>
+</td></tr></table></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">ITBRemoteCallback</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+<table height="292" cellspacing="0" cellpadding="0" class="de_tbl_935" width="935px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="935" class="de_col_935"/><tr style="height: 292px">
+<td class="de_td_935" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 935px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_6FB8B0EA6C"><strong>interface</strong></span><span class="de_0864F56C3F"> ITBRemoteCallback {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		 &#160; &#160; </span><span class="de_99C877624C">/**</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; * </span><span class="de_1C40E0AF9B">服务中心返回的回调结果</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; * <strong>@param</strong> in	 &#160; &#160; respjson</span><span class="de_1C40E0AF9B">服务中心返回回调结果或通知</span><span class="de_99C877624C"> json</span><span class="de_1C40E0AF9B">字符串格式</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; **/</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> OnResponse(String respjson);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span><span class="de_99C877624C">/**</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * </span><span class="de_1C40E0AF9B">外部应用拉起数据服务中心界面接口</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> in &#160; &#160; packageName </span><span class="de_1C40E0AF9B">服务中心内部界面包名</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> in &#160; &#160; packageName </span><span class="de_1C40E0AF9B">服务中心内部界面</span><span class="de_99C877624C">class</span><span class="de_1C40E0AF9B">名</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; * <strong>@param</strong> in &#160; &#160; iCallingPid </span><span class="de_1C40E0AF9B">调用者pid</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	 	 &#160; &#160; * <strong>@param</strong> in &#160; &#160; bundle Bundle</span><span class="de_1C40E0AF9B">参数</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C"> 	 &#160; &#160; **/	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span><span class="de_41998EA5A4"><strong>void</strong></span><span class="de_0864F56C3F"> startActivity(String packageName, String className, </span><span class="de_41998EA5A4"><strong>int</strong></span><span class="de_0864F56C3F"> iCallingPid, Bundle bundle);</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	</span></div>
+</td></tr></table></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">TBAppInfo</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+<table height="356" cellspacing="0" cellpadding="0" class="de_tbl_935" width="935px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="935" class="de_col_935"/><tr style="height: 356px">
+<td class="de_td_935" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 935px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>final</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>class</strong></span><span class="de_0864F56C3F"> TBAppInfo{</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	&#160; &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> String </span><span class="de_C86BAC4BFF">packageName</span><span class="de_0864F56C3F"> = </span><span class="de_A4DCA1D55B">&quot;&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> String </span><span class="de_C86BAC4BFF">appKey</span><span class="de_0864F56C3F"> = </span><span class="de_A4DCA1D55B">&quot;&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> String </span><span class="de_C86BAC4BFF">appSecret</span><span class="de_0864F56C3F"> = </span><span class="de_A4DCA1D55B">&quot;&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> String </span><span class="de_C86BAC4BFF">ttid</span><span class="de_0864F56C3F"> = </span><span class="de_A4DCA1D55B">&quot;&quot;</span><span class="de_0864F56C3F">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F"> &#160; &#160; </span><span class="de_99C877624C">/**</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; * </span><span class="de_1C40E0AF9B">外部应用属性类</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; * @param pakageName&#160; </span><span class="de_1C40E0AF9B">外部应用包名</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_1C40E0AF9B">* </span><span class="de_99C877624C">@param appKey&#160; &#160; &#160; </span><span class="de_1C40E0AF9B">外部应用appkey</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_1C40E0AF9B">* </span><span class="de_99C877624C">@param appSecret &#160; </span><span class="de_1C40E0AF9B">外部应用</span><span class="de_99C877624C">appSecret</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_1C40E0AF9B">* </span><span class="de_99C877624C">@param bundle&#160; &#160; &#160; </span><span class="de_1C40E0AF9B">外部应用</span><span class="de_99C877624C">ttid</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; **/	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> TBAppInfo(String pakageName, String appKey, String appSecret, 			String ttid) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		&#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">packageName</span><span class="de_0864F56C3F"> = pakageName;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		&#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">appKey</span><span class="de_0864F56C3F"> = appKey;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		&#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">appSecret</span><span class="de_0864F56C3F"> = appSecret;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">		&#160; &#160; &#160; &#160; &#160; </span><span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">ttid</span><span class="de_0864F56C3F"> = ttid;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">	}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+</td></tr></table></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">TBAppInfoParcelable</span></div>
+<div class="p" style="text-align: justify; direction: ltr; margin-left:0px">
+<table height="212" cellspacing="0" cellpadding="0" class="de_tbl_935" width="935px" style="margin-left: 0; margin-right: auto; border: 1px solid black; direction:ltr; border-spacing:0px; border-collapse: collapse">
+<col width="935" class="de_col_935"/><tr style="height: 212px">
+<td class="de_td_935" style = "padding: 2px; padding-bottom: 1px; border: 1px solid black; width: 935px; vertical-align: top; " colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> </span><span class="de_41998EA5A4"><strong>class</strong></span><span class="de_0864F56C3F"> TBAppInfoParcelable {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">	</span><span class="de_41998EA5A4"><strong>private</strong></span><span class="de_0864F56C3F"> TBAppInfo </span><span class="de_C86BAC4BFF">info</span><span class="de_0864F56C3F">;&#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0864F56C3F">	 &#160; &#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_0176C2A306"> &#160; &#160; </span><span class="de_99C877624C">/**</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; * </span><span class="de_1C40E0AF9B">外部应用属性容器类</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; * @param info&#160; </span><span class="de_1C40E0AF9B">外部应用类</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+<span class="de_99C877624C">	&#160; &#160; &#160; **/	</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_41998EA5A4"><strong>public</strong></span><span class="de_0864F56C3F"> TBAppInfoParcelable(TBAppInfo info){ </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:100px">
+<span class="de_41998EA5A4"><strong>this</strong></span><span class="de_0864F56C3F">.</span><span class="de_C86BAC4BFF">info</span><span class="de_0864F56C3F"> = info;&#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:50px">
+<span class="de_0864F56C3F">}&#160; </span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+</td></tr></table></div>
+</div></td></tr></table></div> </div><!--End of DrExplain page content--></td>
+					
+				</tr>
+</table>
+			<table id="de_ft" cellpadding="0" cellspacing="0" style="border: none 0px black; width: 100%;"><tr style="border: none 0px black; width: 100%;"><td style="border: none 0px black; width: 100%;"><!--Footer--><div class="p" style="text-align: left; direction: ltr; margin-left:0px">
+&#160;</div>
+<!--End of footer--></td></tr></table>
+			<script type="text/javascript">onDocumentLoaded();</script>
+</body></html>

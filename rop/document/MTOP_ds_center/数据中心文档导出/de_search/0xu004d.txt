@@ -1,0 +1,6 @@
+MAIN; 3;
+MAINACTIVITY; 3;
+MCALLBACK; 3;
+MESSAGE; 3;
+MSG; 3;
+MTOP授权页面，用户点击“我授权此应用访问我的信息”后登录成功; 5;
