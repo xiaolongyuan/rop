@@ -6,7 +6,7 @@ package com.rop;
 
 
 import com.rop.security.InvokeTimesController;
-import com.rop.session.SessionManager;
+import org.apache.shiro.session.mgt.SessionManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.format.support.FormattingConversionService;
 

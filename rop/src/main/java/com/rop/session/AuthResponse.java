@@ -1,5 +1,7 @@
 package com.rop.session;
 
+import org.apache.shiro.session.Session;
+
 import java.util.HashMap;
 import java.util.Map;
 

@@ -4,7 +4,9 @@
  */
 package com.rop;
 
-import com.rop.session.SessionManager;
+
+
+import org.apache.shiro.session.mgt.SessionManager;
 
 import java.util.Map;
 
