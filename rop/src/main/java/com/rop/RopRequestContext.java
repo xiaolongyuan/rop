@@ -5,7 +5,7 @@
 package com.rop;
 
 import com.rop.annotation.HttpAction;
-import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 
 import java.util.Locale;
 import java.util.Map;
@@ -60,26 +60,26 @@ public interface RopRequestContext {
      *
      * @return
      */
-    Session getSession();
+    Subject getSubject();
 
-    /**
-     * 绑定一个会话
-     *
-     * @param session
-     */
-    void addSession(Session session);
-
-    /**
-     * 会话修改
-     *
-     * @param session
-     */
-    void modifySession(String sessionId,Session session);
-
-    /**
-     * 删除会话，删除{@link #getSessionId()}对应的Session
-     */
-    void removeSession();
+//    /**
+//     * 绑定一个会话
+//     *
+//     * @param session
+//     */
+//    void addSubject(Subject Subject);
+//
+//    /**
+//     * 会话修改
+//     *
+//     * @param subject
+//     */
+//    void modifySubject(String sessionId,Subject subject);
+//
+//    /**
+//     * 删除会话，删除{@link #getSubjectId()}对应的Subject
+//     */
+//    void removeSubject();
 
     /**
      * 获取报文格式化参数

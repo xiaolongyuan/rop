@@ -4,7 +4,8 @@
  */
 package com.rop.security;
 
-import com.rop.session.Session;
+
+import org.apache.shiro.session.Session;
 
 /**
  * <pre>

@@ -7,8 +7,10 @@ package com.rop.impl;
 import com.rop.*;
 import com.rop.annotation.HttpAction;
 import com.rop.security.MainError;
-import com.rop.session.Session;
+
 import com.rop.utils.RopUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -68,7 +70,7 @@ public class SimpleRopRequestContext implements RopRequestContext {
 
     private String requestId = RopUtils.getUUID();
 
-    private Session session;
+    private Subject subject;
 
 
     public long getServiceBeginTime() {
@@ -118,6 +120,7 @@ public class SimpleRopRequestContext implements RopRequestContext {
     }
 
     public SimpleRopRequestContext(RopContext ropContext) {
+
         this.ropContext = ropContext;
         this.serviceBeginTime = System.currentTimeMillis();
     }
@@ -152,37 +155,39 @@ public class SimpleRopRequestContext implements RopRequestContext {
     }
 
 
-    public Session getSession() {
-        if (session == null && ropContext != null &&
+    @Override
+    public Subject getSubject() {
+        if (subject == null && ropContext != null &&
                 ropContext.getSessionManager() != null && getSessionId() != null) {
-           session = ropContext.getSessionManager().getSession(getSessionId());
+            subject = SecurityUtils.getSubject();
         }
-        return session;
-    }
-
-    @Override
-    public void addSession(Session session) {
-//        this.sessionId = sessionId;
-        this.session = session;
-        if (ropContext != null && ropContext.getSessionManager() != null) {
-            this.sessionId =  ropContext.getSessionManager().addSession(session);
-        }
-
-    }
-
-    @Override
-    public void modifySession(String sessionId, Session session){
-        if (ropContext != null && ropContext.getSessionManager() != null) {
-            ropContext.getSessionManager().modifySession(sessionId,session);
-        }
+        return subject;
     }
 
 
-    public void removeSession() {
-        if (ropContext != null && ropContext.getSessionManager() != null) {
-            ropContext.getSessionManager().removeSession(getSessionId());
-        }
-    }
+//    @Override
+//    public void addSession(Session session) {
+////        this.sessionId = sessionId;
+//        this.session = session;
+//        if (ropContext != null && ropContext.getSessionManager() != null) {
+//            this.sessionId =  ropContext.getSessionManager().addSession(session);
+//        }
+//
+//    }
+//
+//    @Override
+//    public void modifySession(String sessionId, Session session){
+//        if (ropContext != null && ropContext.getSessionManager() != null) {
+//            ropContext.getSessionManager().modifySession(sessionId,session);
+//        }
+//    }
+//
+//
+//    public void removeSession() {
+//        if (ropContext != null && ropContext.getSessionManager() != null) {
+//            ropContext.getSessionManager().removeSession(getSessionId());
+//        }
+//    }
 
 
     public Locale getLocale() {
