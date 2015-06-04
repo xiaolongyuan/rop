@@ -10,11 +10,11 @@
     </parent>
     <groupId>com.rop</groupId>
     <artifactId>rop</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.8-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>rop core</name>
     <description>rest open platform</description>
-    <url>https://github.com/itstamen/rop</url>
+    <url>http://git.oschina.net/xiaolongyuan/rop</url>
 
     <licenses>
         <license>
@@ -25,16 +25,23 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/itstamen/rop.git</connection>
-        <developerConnection>scm:git:git://github.com/itstamen/rop.git</developerConnection>
-        <url>git://github.com/itstamen/rop.git</url>
+        <connection>scm:git:git@git.oschina.net:xiaolongyuan/rop.git</connection>
+        <developerConnection>scm:git:git@git.oschina.net:xiaolongyuan/rop.git</developerConnection>
+        <url>git@git.oschina.net:xiaolongyuan/rop.git</url>
     </scm>
 
     <developers>
+
         <developer>
             <id>stamen</id>
             <name>stamen</name>
             <email>itstamen@qq.com</email>
+        </developer>
+
+        <developer>
+            <id>longyuan</id>
+            <name>xiaolongyuan</name>
+            <email>794334212@qq.com</email>
         </developer>
     </developers>
 
@@ -324,6 +331,12 @@
             <version>${jackson.version}</version>
         </dependency>
 
+        <!-- shiro -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-cas</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
 
 
     </dependencies>
@@ -444,6 +457,8 @@
 
         <!-- fastjson  JSON序列化工具 -->
         <fastjson.version>1.2.5</fastjson.version>
+
+        <shiro.version>1.2.3</shiro.version>
 
         <jaxb-api.version>2.2.12</jaxb-api.version>
         <jaxb-impl.version>2.1</jaxb-impl.version>
