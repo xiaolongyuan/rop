@@ -138,7 +138,7 @@ public class AnnotationServletServiceRouterFactoryBean
             serviceRouter.setExtErrorBasenames(extErrorBasenames);
         }
 
-        DefaultSecurityManager securityManager = BeanUtils.instantiate(DefaultSecurityManager.class);
+        DefaultSecurityFilter securityManager = BeanUtils.instantiate(DefaultSecurityFilter.class);
 
         securityManager.setSessionManager(sessionManager);
         securityManager.setAppSecretManager(appSecretManager);
@@ -146,7 +146,7 @@ public class AnnotationServletServiceRouterFactoryBean
         securityManager.setInvokeTimesController(invokeTimesController);
         securityManager.setFileUploadController(buildFileUploadController());
 
-        serviceRouter.setSecurityManager(securityManager);
+        serviceRouter.setSecurityFilter(securityManager);
         serviceRouter.setThreadPoolExecutor(threadPoolExecutor);
         serviceRouter.setSignEnable(signEnable);
         serviceRouter.setServiceTimeoutSeconds(serviceTimeoutSeconds);

@@ -4,9 +4,7 @@
  */
 package com.rop;
 
-
-
-import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 
 import java.util.Map;
 
@@ -90,7 +88,7 @@ public interface RopContext {
      * 获取会话管理器
      * @return
      */
-    SessionManager getSessionManager();
+    DefaultWebSecurityManager getSecurityManager();
 
 }
 

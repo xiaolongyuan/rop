@@ -10,20 +10,27 @@ import com.rop.config.SystemParameterNames;
 import com.rop.impl.DefaultServiceAccessController;
 import com.rop.impl.SimpleRopRequestContext;
 import com.rop.request.UploadFileUtils;
+import com.rop.response.ErrorResponse;
 import com.rop.utils.RopUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.web.filter.AccessControlFilter;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.util.*;
 
 /**
  * @author 陈雄华
  * @version 1.0
  */
-public class DefaultSecurityManager implements SecurityManager {
+public class DefaultSecurityFilter extends AccessControlFilter implements SecurityFilter  {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -31,7 +38,7 @@ public class DefaultSecurityManager implements SecurityManager {
 
     protected AppSecretManager appSecretManager = new FileBaseAppSecretManager();
 
-    protected SessionManager sessionManager;
+    protected DefaultWebSecurityManager securityManager;
 
     protected InvokeTimesController invokeTimesController;
 
@@ -225,25 +232,26 @@ public class DefaultSecurityManager implements SecurityManager {
         this.appSecretManager = appSecretManager;
     }
 
+    @Override
+    public void setSecurityManager(DefaultWebSecurityManager securityManager) {
+        this.securityManager = securityManager;
 
-    public void setSessionManager(SessionManager sessionManager) {
-        this.sessionManager = sessionManager;
     }
-
 
     public void setFileUploadController(FileUploadController fileUploadController) {
         this.fileUploadController = fileUploadController;
     }
 
-    private MainError checkInvokeTimesLimit(RopRequestContext rrctx) {
-        if (invokeTimesController.isAppInvokeFrequencyExceed(rrctx.getAppKey())) {
-            return MainErrors.getError(MainErrorType.EXCEED_APP_INVOKE_FREQUENCY_LIMITED, rrctx.getLocale());
-        } else if (invokeTimesController.isAppInvokeLimitExceed(rrctx.getAppKey())) {
-            return MainErrors.getError(MainErrorType.EXCEED_APP_INVOKE_LIMITED, rrctx.getLocale());
-        } else if (invokeTimesController.isSessionInvokeLimitExceed(rrctx.getAppKey(), rrctx.getSessionId())) {
-            return MainErrors.getError(MainErrorType.EXCEED_SESSION_INVOKE_LIMITED, rrctx.getLocale());
-        } else if (invokeTimesController.isUserInvokeLimitExceed(rrctx.getAppKey(), rrctx.getSession())) {
-            return MainErrors.getError(MainErrorType.EXCEED_USER_INVOKE_LIMITED, rrctx.getLocale());
+    private MainError checkInvokeTimesLimit(RopRequestContext ropRequestContext) {
+        if (invokeTimesController.isAppInvokeFrequencyExceed(ropRequestContext.getAppKey())) {
+            return MainErrors.getError(MainErrorType.EXCEED_APP_INVOKE_FREQUENCY_LIMITED, ropRequestContext.getLocale());
+        } else if (invokeTimesController.isAppInvokeLimitExceed(ropRequestContext.getAppKey())) {
+            return MainErrors.getError(MainErrorType.EXCEED_APP_INVOKE_LIMITED, ropRequestContext.getLocale());
+        } else if (invokeTimesController.isSessionInvokeLimitExceed(ropRequestContext.getAppKey(), ropRequestContext.getSessionId())) {
+            return MainErrors.getError(MainErrorType.EXCEED_SESSION_INVOKE_LIMITED, ropRequestContext.getLocale());
+        } else if (invokeTimesController.isUserInvokeLimitExceed(ropRequestContext.getAppKey(), ropRequestContext
+                .getSubject())) {
+            return MainErrors.getError(MainErrorType.EXCEED_USER_INVOKE_LIMITED, ropRequestContext.getLocale());
         } else {
             return null;
         }
@@ -295,7 +303,7 @@ public class DefaultSecurityManager implements SecurityManager {
             }
             return mainError;
         } else {
-            if (!getServiceAccessController().isUserGranted(smc.getSession(), smc.getMethod(), smc.getVersion())) {
+            if (!getServiceAccessController().isUserGranted(smc.getSubject(), smc.getMethod(), smc.getVersion())) {
                 MainError mainError = MainErrors.getError(
                         MainErrorType.INSUFFICIENT_USER_PERMISSIONS, smc.getLocale(),
                         smc.getMethod(), smc.getVersion());
@@ -407,7 +415,9 @@ public class DefaultSecurityManager implements SecurityManager {
     }
 
     private boolean isValidSession(RopRequestContext smc) {
-        if (sessionManager.getSession(smc.getSessionId()) == null) {
+        Session session =  SecurityUtils.getSubject().getSession();
+
+        if (session == null) {
             if (logger.isDebugEnabled()) {
                 logger.debug(smc.getSessionId() + "会话不存在，请检查。");
             }
@@ -483,6 +493,21 @@ public class DefaultSecurityManager implements SecurityManager {
             }
         }
         return mainError;
+    }
+
+    @Override
+    protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
+
+
+
+
+
+        return false;
+    }
+
+    @Override
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
+        return false;
     }
 }
 

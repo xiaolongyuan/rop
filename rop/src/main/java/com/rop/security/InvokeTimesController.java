@@ -5,7 +5,7 @@
 package com.rop.security;
 
 import com.rop.RopRequestContext;
-import com.rop.session.Session;
+import org.apache.shiro.subject.Subject;
 
 /**
  * <pre>
@@ -26,10 +26,10 @@ public interface InvokeTimesController {
 
     /**
      * 用户服务访问次数是否超限
-     * @param session
+     * @param subject
      * @return
      */
-    boolean isUserInvokeLimitExceed(String appKey, Session session);
+    boolean isUserInvokeLimitExceed(String appKey, Subject subject);
 
     /**
      * 某个会话的服务访问次数是否超限

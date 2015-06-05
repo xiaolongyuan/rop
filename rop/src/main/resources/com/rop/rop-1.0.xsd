@@ -20,11 +20,11 @@
                             </xsd:appinfo>
                         </xsd:annotation>
                     </xsd:attribute>
-                    <xsd:attribute name="session-manager" type="xsd:string">
+                    <xsd:attribute name="security-manager" type="xsd:string">
                         <xsd:annotation>
                             <xsd:appinfo>
                                 <tool:annotation kind="ref">
-                                    <tool:expected-type type="java:com.rop.session.SessionManager"/>
+                                    <tool:expected-type type="java:org.apache.shiro.mgt.SecurityManager"/>
                                 </tool:annotation>
                             </xsd:appinfo>
                         </xsd:annotation>

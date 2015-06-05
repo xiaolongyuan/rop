@@ -5,7 +5,7 @@
 package com.rop.security;
 
 import com.rop.RopRequestContext;
-import com.rop.session.SessionManager;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 
 /**
  * <pre>
@@ -15,7 +15,7 @@ import com.rop.session.SessionManager;
  * @author 陈雄华
  * @version 1.0
  */
-public interface SecurityManager {
+public interface SecurityFilter {
 
     /**
      * 对请求服务的上下文进行检查校验
@@ -52,7 +52,7 @@ public interface SecurityManager {
      *
      * @return
      */
-    void setSessionManager(SessionManager sessionManager);
+    void setSecurityManager(DefaultWebSecurityManager securityManager);
 
 
     /**

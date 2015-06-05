@@ -9,6 +9,7 @@ import com.rop.annotation.*;
 import com.rop.config.SystemParameterNames;
 import com.rop.request.UploadFile;
 import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +43,7 @@ public class DefaultRopContext implements RopContext {
 
     private boolean signEnable;
 
-    private SessionManager sessionManager;
+    private DefaultWebSecurityManager securityManager;
 
     public DefaultRopContext(ApplicationContext context) {
         registerFromContext(context);
@@ -100,13 +101,13 @@ public class DefaultRopContext implements RopContext {
         return signEnable;
     }
 
-
-    public SessionManager getSessionManager() {
-        return this.sessionManager;
+    @Override
+    public DefaultWebSecurityManager getSecurityManager() {
+        return securityManager;
     }
 
-    public void setSessionManager(SessionManager sessionManager) {
-        this.sessionManager = sessionManager;
+    public void setSecurityManager(DefaultWebSecurityManager securityManager) {
+        this.securityManager = securityManager;
     }
 
     public void setSignEnable(boolean signEnable) {

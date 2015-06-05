@@ -6,7 +6,8 @@ package com.rop;
 
 
 import com.rop.security.InvokeTimesController;
-import org.apache.shiro.session.mgt.SessionManager;
+import com.rop.security.SecurityFilter;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.format.support.FormattingConversionService;
 
@@ -84,11 +85,11 @@ public interface ServiceRouter {
 //    void addListener(RopEventListener listener);
 
     /**
-     * 设置{@link com.rop.security.SecurityManager}
+     * 设置{@link SecurityFilter}
      *
-     * @param securityManager
+     * @param securityFilter
      */
-    void setSecurityManager(com.rop.security.SecurityManager securityManager);
+    void setSecurityFilter(SecurityFilter securityFilter);
 
     /**
      * 注册
@@ -136,7 +137,7 @@ public interface ServiceRouter {
      *
      * @param sessionManager
      */
-    void setSessionManager(SessionManager sessionManager);
+    void setSecurityManager(DefaultWebSecurityManager securityManager);
 
     /**
      * 设置服务调用限制管理器

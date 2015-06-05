@@ -1,11 +1,6 @@
-/**
- *
- * 日    期：12-2-13
- */
 package com.rop.security;
 
-
-import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 
 /**
  * <pre>
@@ -31,6 +26,6 @@ public interface ServiceAccessController {
      * @param ropRequestContext
      * @return
      */
-    boolean isUserGranted(Session session,String method,String version);
+    boolean isUserGranted(Subject subject,String method,String version);
 }
 

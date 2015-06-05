@@ -6,7 +6,6 @@ package com.rop.impl;
 
 import com.rop.*;
 import com.rop.MessageFormat;
-import com.rop.client.CompositeResponse;
 import com.rop.config.SystemParameterNames;
 import com.rop.event.*;
 import com.rop.marshaller.JacksonJsonRopMarshaller;
@@ -16,11 +15,12 @@ import com.rop.request.RopRequestMessageConverter;
 import com.rop.request.UploadFileConverter;
 import com.rop.response.*;
 import com.rop.security.*;
-import com.rop.security.SecurityManager;
+import com.rop.security.SecurityFilter;
 import com.rop.session.SessionBindInterceptor;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.session.mgt.DefaultSessionManager;
 import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -34,7 +34,7 @@ import org.springframework.util.Assert;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.*;
+import java.security.Security;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -60,7 +60,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
 
     private RequestContextBuilder requestContextBuilder;
 
-    private SecurityManager securityManager;
+    private SecurityFilter securityFilter;
 
     private FormattingConversionService formattingConversionService;
 
@@ -82,7 +82,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
     private int serviceTimeoutSeconds = Integer.MAX_VALUE;
 
     //会话管理器
-    private SessionManager sessionManager = new DefaultSessionManager();
+    private DefaultWebSecurityManager securityManager;
 
     //服务调用频率管理器
     private InvokeTimesController invokeTimesController = new DefaultInvokeTimesController();
@@ -94,6 +94,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
     private String[] extErrorBasenames;
 
 
+    @Override
     public void service(Object request, Object response) {
         HttpServletRequest servletRequest = (HttpServletRequest) request;
         HttpServletResponse servletResponse = (HttpServletResponse) response;
@@ -177,7 +178,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         }
     }
 
-
+    @Override
     public void startup() {
         if (logger.isInfoEnabled()) {
             logger.info("开始启动Rop框架...");
@@ -194,8 +195,8 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         this.requestContextBuilder = new ServletRequestContextBuilder(this.formattingConversionService);
 
         //设置校验器
-        if (this.securityManager == null) {
-            this.securityManager = new DefaultSecurityManager();
+        if (this.securityFilter == null) {
+            this.securityFilter = new DefaultSecurityFilter();
         }
 
         //设置异步执行器
@@ -227,6 +228,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         }
     }
 
+
     private void registerConverters(FormattingConversionService conversionService) {
         conversionService.addConverter(new RopRequestMessageConverter());
         conversionService.addConverter(new UploadFileConverter());
@@ -240,13 +242,13 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         }
     }
 
-
+    @Override
     public void shutdown() {
         fireBeforeCloseRopEvent();
         threadPoolExecutor.shutdown();
     }
 
-
+    @Override
     public void setSignEnable(boolean signEnable) {
         if (!signEnable && logger.isWarnEnabled()) {
             logger.warn("rop close request message sign");
@@ -254,7 +256,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         this.signEnable = signEnable;
     }
 
-
+    @Override
     public void setThreadFerryClass(Class<? extends ThreadFerry> threadFerryClass) {
         if (logger.isDebugEnabled()) {
             logger.debug("ThreadFerry set to {}",threadFerryClass.getName());
@@ -262,7 +264,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         this.threadFerryClass = threadFerryClass;
     }
 
-
+    @Override
     public void setInvokeTimesController(InvokeTimesController invokeTimesController) {
         if (logger.isDebugEnabled()) {
             logger.debug("InvokeTimesController set to {}",invokeTimesController.getClass().getName());
@@ -270,7 +272,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         this.invokeTimesController = invokeTimesController;
     }
 
-
+    @Override
     public void setServiceTimeoutSeconds(int serviceTimeoutSeconds) {
         if (logger.isDebugEnabled()) {
             logger.debug("serviceTimeoutSeconds set to {}",serviceTimeoutSeconds);
@@ -278,15 +280,15 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         this.serviceTimeoutSeconds = serviceTimeoutSeconds;
     }
 
-
-    public void setSecurityManager(SecurityManager securityManager) {
+    @Override
+    public void setSecurityFilter(SecurityFilter securityFilter) {
         if (logger.isDebugEnabled()) {
-            logger.debug("securityManager set to {}",securityManager.getClass().getName());
+            logger.debug("securityManager set to {}", securityFilter.getClass().getName());
         }
-        this.securityManager = securityManager;
+        this.securityFilter = securityFilter;
     }
 
-
+    @Override
     public void setFormattingConversionService(FormattingConversionService formatConversionService) {
         if (logger.isDebugEnabled()) {
             logger.debug("formatConversionService set to {}",formatConversionService.getClass().getName());
@@ -294,12 +296,12 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         this.formattingConversionService = formatConversionService;
     }
 
-
-    public void setSessionManager(SessionManager sessionManager) {
+    @Override
+    public void setSecurityManager(DefaultWebSecurityManager securityManager) {
         if (logger.isDebugEnabled()) {
-            logger.debug("sessionManager set to {}",sessionManager.getClass().getName());
+            logger.debug("sessionManager set to {}",securityManager.getClass().getName());
         }
-        this.sessionManager = sessionManager;
+        this.securityManager = securityManager;
     }
 
     /**
@@ -435,7 +437,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
                         ropContext, servletRequest, servletResponse);
 
                 //验证系统级参数的合法性
-                MainError mainError = securityManager.validateSystemParameters(ropRequestContext);
+                MainError mainError = securityFilter.validateSystemParameters(ropRequestContext);
                 if (mainError != null) {
                     ropRequestContext.setRopResponse(new ErrorResponse(mainError));
                 } else {
@@ -444,7 +446,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
                     ropRequest = requestContextBuilder.buildRopRequest(ropRequestContext);
 
                     //进行其它检查业务数据合法性，业务安全等
-                    mainError = securityManager.validateOther(ropRequestContext);
+                    mainError = securityFilter.validateOther(ropRequestContext);
                     if (mainError != null) {
                         ropRequestContext.setRopResponse(new ErrorResponse(mainError));
                     } else {
@@ -516,29 +518,10 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
     private RopContext buildRopContext() {
         DefaultRopContext defaultRopContext = new DefaultRopContext(this.applicationContext);
         defaultRopContext.setSignEnable(this.signEnable);
-        defaultRopContext.setSessionManager(sessionManager);
+        defaultRopContext.setSecurityManager(this.securityManager);
 
         return defaultRopContext;
     }
-
-//    private RopEventMulticaster buildRopEventMulticaster() {
-//
-//        SimpleRopEventMulticaster simpleRopEventMulticaster = new SimpleRopEventMulticaster();
-//
-//        //设置异步执行器
-//        if (this.threadPoolExecutor != null) {
-//            simpleRopEventMulticaster.setExecutor(this.threadPoolExecutor);
-//        }
-//
-//        //添加事件监听器
-//        if (this.listeners != null && this.listeners.size() > 0) {
-//            for (RopEventListener ropEventListener : this.listeners) {
-//                simpleRopEventMulticaster.addRopListener(ropEventListener);
-//            }
-//        }
-//
-//        return simpleRopEventMulticaster;
-//    }
 
     /**
      * 发布服务方法事件
@@ -719,8 +702,8 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         SubErrors.setErrorMessageSourceAccessor(messageSourceAccessor);
     }
 
-    public SecurityManager getSecurityManager() {
-        return securityManager;
+    public SecurityFilter getSecurityFilter() {
+        return securityFilter;
     }
 
 
